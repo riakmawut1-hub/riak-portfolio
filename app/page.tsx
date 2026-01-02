@@ -50,9 +50,12 @@ export default function Portfolio() {
     },
 
     about: {
-
-      text: "I am a dedicated supply chain and administration professional with over five years' experience in procurement, logistics, inventory control, and administrative coordination. Since 2022 I have been pursuing a degree in Cybersecurity at the University of Juba, where I am developing practical skills in secure system design, secure coding practices, and threat awareness. In addition to my supply-chain background, I design and build full responsive websites and web applications — from static marketing pages to dynamic apps with REST APIs and MongoDB backends. I focus on accessible, mobile-first design, secure defaults, and cost-effective deployments. I offer affordable freelance rates for small businesses and personal projects; contact me to discuss scope and pricing."
-
+      paragraphs: [
+        "My name is Riak Mawut Angui Atem. I am a dedicated supply chain and administration professional with over five years of experience in procurement, logistics, inventory control, and administrative coordination across complex operating environments. My career began in supply chain and logistics, where I developed strong organizational discipline, accountability, and process-optimization skills while managing procurement operations and inventory at scale.",
+        "Since 2022, I have been pursuing a degree in Cybersecurity at the University of Juba, driven by a strong interest in secure systems, data protection, and resilient digital infrastructure. Through my studies and independent practice, I have developed practical skills in secure system design, secure coding practices, threat awareness, and risk-conscious development.",
+        "In parallel, I design and build fully responsive websites and web applications, ranging from static marketing pages to dynamic applications using REST APIs and MongoDB backends. My work emphasizes accessibility, mobile-first design, secure defaults, clean architecture, and cost-effective deployment strategies.",
+        "Professionally, I am detail-oriented, analytical, and reliability-driven. I value clarity, security, and efficiency in both physical operations and digital systems. I offer affordable freelance services for small businesses and personal projects, with a focus on delivering practical, secure, and scalable solutions."
+      ]
     },
 
     skills: [
@@ -576,7 +579,7 @@ export default function Portfolio() {
 
               <div className="relative bg-gradient-to-br from-orange-100 to-orange-50 rounded-2xl p-8 shadow-lg z-0">
 
-                <div className="absolute top-4 right-4 bg-white px-4 py-2 rounded-full shadow-md z-20">
+                <div className="absolute top-4 right-4 bg-white px-4 py-2 rounded-full shadow-md z-20 animate-gentle-bounce">
 
                   <span className="text-sm font-semibold text-orange-600">Available for Freelance</span>
 
@@ -596,7 +599,7 @@ export default function Portfolio() {
 
               
 
-              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg border-2 border-orange-100 z-30">
+              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg border-2 border-orange-100 z-30 animate-gentle-bounce" style={{ animationDelay: '0.5s' } as React.CSSProperties}>
 
                 <div className="flex items-center space-x-3">
 
@@ -632,13 +635,43 @@ export default function Portfolio() {
 
       <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
 
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">About</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-12" style={{ fontFamily: 'Roboto, sans-serif' }}>About</h2>
 
-          <div className="prose prose-lg text-gray-600">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
 
-            <p className="leading-relaxed">{content.about.text}</p>
+            <div className="space-y-6">
+
+              {content.about.paragraphs.map((paragraph, index) => (
+
+                <p key={index} className="text-gray-700 leading-relaxed text-justify text-base sm:text-lg" style={{ fontFamily: 'Roboto, sans-serif' }}>
+
+                  {paragraph}
+
+                </p>
+
+              ))}
+
+            </div>
+
+            <div className="relative">
+
+              <div className="rounded-xl overflow-hidden shadow-lg">
+
+                <img 
+
+                  src="/profile 2.png"
+
+                  alt="Riak Mawut Angui Atem - Professional Profile"
+
+                  className="w-full h-auto object-cover rounded-xl"
+
+                />
+
+              </div>
+
+            </div>
 
           </div>
 
