@@ -572,7 +572,7 @@ export default function Portfolio() {
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
 
-            <div className="space-y-6">
+            <div className="space-y-6 order-2 md:order-1">
 
               <div className="inline-flex items-center space-x-2 px-4 py-2 bg-orange-50 rounded-full">
 
@@ -686,7 +686,7 @@ export default function Portfolio() {
 
             </div>
 
-            <div className="relative z-10 mb-8">
+            <div className="relative z-10 mb-8 order-1 md:order-2">
 
               <div className="relative bg-gradient-to-br from-orange-100 to-orange-50 rounded-2xl p-8 shadow-lg z-0">
 
