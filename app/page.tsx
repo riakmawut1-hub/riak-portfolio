@@ -1418,7 +1418,7 @@ export default function Portfolio() {
 
           <div className="border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-400">
 
-            <p>© 2025 Riak Mawut Angui Atem — All rights reserved.</p>
+            <p>© 2026 Riak Mawut Angui Atem — All rights reserved.</p>
 
             <button 
 
