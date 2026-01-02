@@ -479,7 +479,7 @@ export default function Portfolio() {
 
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900" style={{ fontFamily: 'Roboto, sans-serif' }}>
 
                 Hi, I'm <span className="text-orange-600">{content.hero.name.split(' ')[0]}</span>
 
@@ -487,13 +487,13 @@ export default function Portfolio() {
 
               <div className="space-y-2">
 
-                <h2 className="text-2xl sm:text-3xl font-semibold text-gray-700">
+                <h2 className="text-2xl sm:text-3xl font-semibold text-gray-700" style={{ fontFamily: 'Roboto, sans-serif' }}>
 
                   {content.hero.title}
 
                 </h2>
 
-                <p className="text-lg text-gray-600">{content.hero.subtitle}</p>
+                <p className="text-lg text-gray-600" style={{ fontFamily: 'Roboto, sans-serif' }}>{content.hero.subtitle}</p>
 
               </div>
 
@@ -505,9 +505,9 @@ export default function Portfolio() {
 
                   <div>
 
-                    <p className="font-semibold text-lg">{content.hero.highlight}</p>
+                    <p className="font-semibold text-lg" style={{ fontFamily: 'Roboto, sans-serif' }}>{content.hero.highlight}</p>
 
-                    <p className="text-gray-600">{content.hero.webDev}</p>
+                    <p className="text-gray-600" style={{ fontFamily: 'Roboto, sans-serif' }}>{content.hero.webDev}</p>
 
                   </div>
 
@@ -515,7 +515,7 @@ export default function Portfolio() {
 
               </div>
 
-              <p className="text-gray-600 leading-relaxed">{content.hero.description}</p>
+              <p className="text-gray-600 leading-relaxed text-justify max-w-2xl" style={{ fontFamily: 'Roboto, sans-serif', lineHeight: '1.75' }}>{content.hero.description}</p>
 
               <div className="flex flex-wrap gap-4 pt-4">
 
@@ -524,6 +524,8 @@ export default function Portfolio() {
                   onClick={() => scrollToSection('contact')}
 
                   className="px-8 py-3 bg-orange-600 text-white font-medium rounded-lg hover:bg-orange-700 transition-colors"
+
+                  style={{ fontFamily: 'Roboto, sans-serif' }}
 
                 >
 
@@ -536,6 +538,8 @@ export default function Portfolio() {
                   onClick={() => scrollToSection('projects')}
 
                   className="px-8 py-3 border-2 border-gray-300 text-gray-700 font-medium rounded-lg hover:border-orange-600 hover:text-orange-600 transition-colors"
+
+                  style={{ fontFamily: 'Roboto, sans-serif' }}
 
                 >
 
@@ -579,7 +583,7 @@ export default function Portfolio() {
 
               <div className="relative bg-gradient-to-br from-orange-100 to-orange-50 rounded-2xl p-8 shadow-lg z-0">
 
-                <div className="absolute top-4 right-4 bg-white px-4 py-2 rounded-full shadow-md z-20 animate-gentle-bounce">
+                <div className="absolute top-4 right-4 bg-white px-4 py-2 rounded-full shadow-md z-20 animate-smooth-pulse">
 
                   <span className="text-sm font-semibold text-orange-600">Available for Freelance</span>
 
@@ -599,7 +603,7 @@ export default function Portfolio() {
 
               
 
-              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg border-2 border-orange-100 z-30 animate-gentle-bounce" style={{ animationDelay: '0.5s' } as React.CSSProperties}>
+              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg border-2 border-orange-100 z-30 animate-smooth-pulse" style={{ animationDelay: '0.5s' } as React.CSSProperties}>
 
                 <div className="flex items-center space-x-3">
 
@@ -813,29 +817,42 @@ export default function Portfolio() {
 
           <div className="grid sm:grid-cols-2 gap-8">
 
-            {content.projects.map((project, index) => (
+            {content.projects.map((project, index) => {
+              const imageMap = [
+                '/project-image1.png',
+                '/project-image2.png',
+                '/project-image3.png',
+                '/project-image4.png'
+              ];
 
-              <div key={index} className="bg-gray-50 rounded-xl overflow-hidden hover:shadow-lg transition-shadow border border-gray-200">
+              return (
+                <div key={index} className="bg-gray-50 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-200 group">
 
-                <div className="aspect-video bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                  <div className="aspect-video relative overflow-hidden">
 
-                  <Globe className="text-white opacity-50" size={64} />
+                    <img 
+                      src={imageMap[index]}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+
+                    <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+
+                  </div>
+
+                  <div className="p-6">
+
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
+
+                    <p className="text-sm text-orange-600 font-medium mb-3">{project.tech}</p>
+
+                    <p className="text-gray-600">{project.description}</p>
+
+                  </div>
 
                 </div>
-
-                <div className="p-6">
-
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
-
-                  <p className="text-sm text-orange-600 font-medium mb-3">{project.tech}</p>
-
-                  <p className="text-gray-600">{project.description}</p>
-
-                </div>
-
-              </div>
-
-            ))}
+              );
+            })}
 
           </div>
 
