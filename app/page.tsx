@@ -13,7 +13,7 @@ export default function Portfolio() {
 
   const [activeSection, setActiveSection] = useState('home');
 
-  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
 
   const [formStatus, setFormStatus] = useState({ loading: false, success: false, error: '' });
 
@@ -190,7 +190,9 @@ export default function Portfolio() {
 
         tier: "Micro",
 
-        price: "Contact for Quote",
+        price: "$70",
+
+        priceValue: 70,
 
         features: ["Single landing page", "Responsive design", "Contact form", "Basic SEO", "1 week delivery"]
 
@@ -200,7 +202,9 @@ export default function Portfolio() {
 
         tier: "Standard",
 
-        price: "Affordable Rates",
+        price: "$100",
+
+        priceValue: 100,
 
         features: ["Multi-page website", "Custom backend API", "Database integration", "Security hardening", "2-3 week delivery"]
 
@@ -210,7 +214,9 @@ export default function Portfolio() {
 
         tier: "Pro",
 
-        price: "Custom Quote",
+        price: "$150",
+
+        priceValue: 150,
 
         features: ["Full web application", "Advanced features", "Admin dashboard", "Deployment & hosting", "Ongoing support"]
 
@@ -268,7 +274,7 @@ export default function Portfolio() {
 
     // Client-side validation
 
-    if (!formData.name || !formData.email || !formData.message) {
+    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
 
       setFormStatus({ loading: false, success: false, error: 'Please fill in all required fields' });
 
@@ -301,13 +307,23 @@ export default function Portfolio() {
       });
 
       
-      const data = await response.json();
+      let data;
+      try {
+        data = await response.json();
+      } catch (parseError) {
+        // If response is not JSON, get text
+        const text = await response.text();
+        console.error('API response error:', text);
+        setFormStatus({ loading: false, success: false, error: 'Server error. Please check your connection and try again.' });
+        return;
+      }
 
       
       if (!response.ok) {
 
         // Handle rate limiting and other errors
-        const errorMessage = data.error || 'Failed to send message. Please try again.';
+        const errorMessage = data?.error || `Server error (${response.status}). Please try again.`;
+        console.error('API error:', errorMessage, data);
         setFormStatus({ loading: false, success: false, error: errorMessage });
         return;
       }
@@ -315,7 +331,7 @@ export default function Portfolio() {
       
       setFormStatus({ loading: false, success: true, error: '' });
 
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
 
       
 
@@ -329,7 +345,8 @@ export default function Portfolio() {
 
     } catch (error) {
 
-      setFormStatus({ loading: false, success: false, error: 'Failed to send message. Please try again.' });
+      console.error('Form submission error:', error);
+      setFormStatus({ loading: false, success: false, error: 'Network error. Please check your connection and try again.' });
 
     }
 
@@ -349,6 +366,64 @@ export default function Portfolio() {
 
   };
 
+  // Generate contextual message based on service plan
+  const generateServiceMessage = (tier: string, price: number) => {
+
+    const messages: { [key: string]: string } = {
+
+      Micro: `Hello, I'm interested in the Micro plan ($${price}) for a single landing page. Please contact me with next steps.`,
+
+      Standard: `Hello, I'm interested in the Standard plan ($${price}) for a multi-page website with backend features. Please contact me with next steps.`,
+
+      Pro: `Hello, I'm interested in the Pro plan ($${price}) for a full web application. Please contact me with next steps.`
+
+    };
+
+    return messages[tier] || `Hello, I'm interested in the ${tier} plan ($${price}). Please contact me with next steps.`;
+
+  };
+
+  // Handle service card click - open contact form with pre-filled message
+  const handleServiceClick = (service: { tier: string; priceValue: number }) => {
+
+    const message = generateServiceMessage(service.tier, service.priceValue);
+
+    setFormData({
+
+      name: '',
+
+      email: '',
+
+      phone: '',
+
+      subject: `${service.tier} Plan Inquiry`,
+
+      message: message
+
+    });
+
+    // Scroll to contact section
+
+    scrollToSection('contact');
+
+    // Focus on message textarea after a short delay
+
+    setTimeout(() => {
+
+      const textarea = document.getElementById('message-textarea') as HTMLTextAreaElement;
+
+      if (textarea) {
+
+        textarea.focus();
+
+        textarea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      }
+
+    }, 500);
+
+  };
+
   return (
 
     <div className="min-h-screen bg-gray-50">
@@ -363,13 +438,17 @@ export default function Portfolio() {
 
             <div className="flex items-center space-x-2">
 
-              <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+              <img 
 
-                R
+                src="/profile-icon.png"
 
-              </div>
+                alt="Riak Mawut Logo"
 
-              <span className="text-xl font-bold text-gray-900">Riak Mawut</span>
+                className="w-10 h-10 object-contain"
+
+              />
+
+              <span className="text-xl font-bold text-orange-600">Riak Mawut</span>
 
             </div>
 
@@ -876,11 +955,37 @@ export default function Portfolio() {
 
             {content.services.map((service, index) => (
 
-              <div key={index} className={`bg-white p-8 rounded-xl shadow-sm border-2 ${
+              <div 
 
-                index === 1 ? 'border-orange-600 relative' : 'border-gray-200'
+                key={index} 
 
-              }`}>
+                onClick={() => handleServiceClick(service)}
+
+                className={`bg-white p-8 rounded-xl shadow-sm border-2 cursor-pointer transition-all duration-200 hover:shadow-md hover:border-orange-400 ${
+
+                  index === 1 ? 'border-orange-600 relative' : 'border-gray-200'
+
+                }`}
+
+                role="button"
+
+                tabIndex={0}
+
+                onKeyDown={(e) => {
+
+                  if (e.key === 'Enter' || e.key === ' ') {
+
+                    e.preventDefault();
+
+                    handleServiceClick(service);
+
+                  }
+
+                }}
+
+                aria-label={`Select ${service.tier} plan for $${service.priceValue}`}
+
+              >
 
                 {index === 1 && (
 
@@ -958,7 +1063,7 @@ export default function Portfolio() {
 
       {/* Contact Section */}
 
-      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-white scroll-mt-20">
 
         <div className="max-w-4xl mx-auto">
 
@@ -1083,6 +1188,26 @@ export default function Portfolio() {
 
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-600 transition-colors"
 
+                  required
+
+                />
+
+                
+
+                <input
+
+                  type="tel"
+
+                  placeholder="Your Phone Number *"
+
+                  value={formData.phone}
+
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-600 transition-colors"
+
+                  required
+
                 />
 
                 
@@ -1105,6 +1230,8 @@ export default function Portfolio() {
 
                 <textarea
 
+                  id="message-textarea"
+
                   placeholder="Your Message *"
 
                   value={formData.message}
@@ -1114,6 +1241,8 @@ export default function Portfolio() {
                   rows={5}
 
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-600 transition-colors resize-none"
+
+                  required
 
                 />
 
@@ -1191,13 +1320,17 @@ export default function Portfolio() {
 
               <div className="flex items-center space-x-2 mb-4">
 
-                <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                <img 
 
-                  R
+                  src="/profile-icon.png"
 
-                </div>
+                  alt="Riak Mawut Logo"
 
-                <span className="text-xl font-bold">Riak Mawut</span>
+                  className="w-10 h-10 object-contain"
+
+                />
+
+                <span className="text-xl font-bold text-orange-600">Riak Mawut</span>
 
               </div>
 

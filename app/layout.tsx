@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/profile-icon.png",
+    apple: "/profile-icon.png",
   },
 };
 

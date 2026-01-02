@@ -3,17 +3,23 @@ import { Resend } from 'resend';
 import dbConnect from '../../../lib/mongodb';
 import Contact from '../../../models/Contact';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend only if API key is available
+const getResend = () => {
+  if (process.env.RESEND_API_KEY) {
+    return new Resend(process.env.RESEND_API_KEY);
+  }
+  return null;
+};
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, subject, message } = body;
+    const { name, email, phone, subject, message } = body;
 
     // Input validation
-    if (!name || !email || !message) {
+    if (!name || !email || !phone || !message) {
       return NextResponse.json(
-        { error: 'Missing required fields: name, email, and message are required' },
+        { error: 'Missing required fields: name, email, phone, and message are required' },
         { status: 400 }
       );
     }
@@ -31,6 +37,7 @@ export async function POST(request: Request) {
     const sanitizedData = {
       name: name.trim().substring(0, 100),
       email: email.trim().toLowerCase().substring(0, 100),
+      phone: phone.trim().substring(0, 20),
       subject: subject?.trim().substring(0, 200) || '',
       message: message.trim().substring(0, 2000),
     };
@@ -38,13 +45,26 @@ export async function POST(request: Request) {
     // Connect to MongoDB
     await dbConnect();
 
+    // Log the data being saved (for debugging)
+    console.log('Saving contact submission:', {
+      name: sanitizedData.name,
+      email: sanitizedData.email,
+      phone: sanitizedData.phone,
+      hasSubject: !!sanitizedData.subject,
+      messageLength: sanitizedData.message.length
+    });
+
     // Save contact submission
     const contact = await Contact.create(sanitizedData);
+    
+    console.log('Contact saved successfully:', contact._id);
 
     // Send email notification (if RESEND_API_KEY is configured)
     if (process.env.RESEND_API_KEY && process.env.CONTACT_EMAIL) {
       try {
-        await resend.emails.send({
+        const resend = getResend();
+        if (resend) {
+          await resend.emails.send({
           from: 'Portfolio Contact <onboarding@resend.dev>', // You'll need to verify a domain or use Resend's default
           to: process.env.CONTACT_EMAIL,
           subject: `New Contact Form Submission${sanitizedData.subject ? `: ${sanitizedData.subject}` : ''}`,
@@ -54,6 +74,7 @@ export async function POST(request: Request) {
               <div style="background: #f9fafb; padding: 20px; border-radius: 8px; margin: 20px 0;">
                 <p><strong>Name:</strong> ${sanitizedData.name}</p>
                 <p><strong>Email:</strong> <a href="mailto:${sanitizedData.email}">${sanitizedData.email}</a></p>
+                <p><strong>Phone:</strong> <a href="tel:${sanitizedData.phone}">${sanitizedData.phone}</a></p>
                 ${sanitizedData.subject ? `<p><strong>Subject:</strong> ${sanitizedData.subject}</p>` : ''}
                 <p><strong>Message:</strong></p>
                 <p style="white-space: pre-wrap; background: white; padding: 15px; border-radius: 4px;">${sanitizedData.message}</p>
@@ -64,7 +85,8 @@ export async function POST(request: Request) {
               </p>
             </div>
           `,
-        });
+          });
+        }
       } catch (emailError) {
         // Log email error but don't fail the request
         console.error('Failed to send email notification:', emailError);
@@ -77,18 +99,31 @@ export async function POST(request: Request) {
     );
   } catch (error: any) {
     console.error('Contact form error:', error);
+    console.error('Error details:', {
+      name: error?.name,
+      message: error?.message,
+      stack: error?.stack
+    });
 
     // Handle validation errors from Mongoose
     if (error.name === 'ValidationError') {
       const errors = Object.values(error.errors).map((err: any) => err.message);
       return NextResponse.json(
-        { error: errors.join(', ') },
+        { error: `Validation error: ${errors.join(', ')}` },
         { status: 400 }
       );
     }
 
+    // Handle MongoDB connection errors
+    if (error.name === 'MongoServerError' || error.message?.includes('Mongo')) {
+      return NextResponse.json(
+        { error: 'Database connection error. Please try again later.' },
+        { status: 500 }
+      );
+    }
+
     return NextResponse.json(
-      { error: 'Failed to submit form. Please try again later.' },
+      { error: error?.message || 'Failed to submit form. Please try again later.' },
       { status: 500 }
     );
   }
