@@ -96,15 +96,21 @@ export default function Portfolio() {
 
         highlights: [
 
-          "Coordinated incoming/outgoing correspondence and confidential information management",
+          "Coordinated incoming and outgoing correspondence, managing confidential information and ensuring effective communication within the organization",
 
-          "Organized meetings and events with full logistical support",
+          "Organized meetings, conferences, and events, providing full logistical support, preparing agendas, and distributing minutes",
 
-          "Managed executive calendar and stakeholder interactions",
+          "Managed the executive calendar, scheduled appointments, arranged official travel and accommodations, and handled stakeholder interactions",
 
-          "Monitored budgets and prepared expenditure reports",
+          "Served as the main point of contact for client inquiries and stakeholder communications, providing timely and professional responses",
 
-          "Maintained detailed financial records with security-conscious practices"
+          "Handled visitor reception, navigated clients within the office, and provided refreshments and hospitality services",
+
+          "Provided phone support, answered calls, took messages, and assisted in routine client inquiries",
+
+          "Monitored budgets and prepared expenditure reports to support compliance",
+
+          "Maintained detailed financial records, ensuring transparency and accuracy"
 
         ]
 
@@ -122,17 +128,39 @@ export default function Portfolio() {
 
         highlights: [
 
-          "Oversaw end-to-end supply chain operations including procurement and vendor engagement",
+          "Oversaw end-to-end supply chain operations, including procurement planning, order processing, and vendor engagement",
+
+          "Conducted supplier evaluations, negotiated terms, and ensured quality and compliance in all transactions",
 
           "Monitored stock worth over 10M SSP using FIFO methods, reducing wastage by 20%",
 
-          "Supervised 150+ shipments with 98% on-time delivery rate",
+          "Implemented FIFO stock control, minimizing wastage and improving inventory accuracy by 20%",
 
-          "Redesigned warehouse layout, increasing storage efficiency by 25%",
+          "Processed procurement requests for office and warehouse supplies, ensuring inventory readiness",
 
-          "Maintained 100% audit-readiness through secure record-keeping practices",
+          "Prepared load plans, packing lists, and documentation for accurate and timely deliveries",
 
-          "Trained and mentored warehouse staff on compliance and security procedures"
+          "Supervised over 150 shipments with a 98% on-time delivery rate and led cross-functional logistics teams",
+
+          "Organized transportation logistics for shipments across South Sudan, improving delivery efficiency by 15%",
+
+          "Coordinated shipments with vendors and logistics teams, verified packing lists, and ensured accurate and timely deliveries",
+
+          "Maintained detailed documentation, issued waybills, and completed paperwork for in-and-out movements of materials",
+
+          "Redesigned warehouse layout, increasing storage efficiency by 25% and streamlining retrieval processes",
+
+          "Coordinated with vendors and logistics teams to resolve shipment delays and discrepancies",
+
+          "Acted as a point of contact for clients and suppliers, maintaining professional relationships",
+
+          "Monitored budgets, generated financial reports, and supported external audits",
+
+          "Monitored budget allocations, tracked expenditures, and prepared reports, supporting financial compliance and accurate record-keeping",
+
+          "Submitted weekly inventory and warehouse stock reports to program managers, contributing to transparent supply chain management",
+
+          "Maintained documentation including purchase orders, invoices, delivery notes, and supplier records"
 
         ]
 
