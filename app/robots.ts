@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://your-domain.onrender.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://riak-portfolio.onrender.com';
 
   return {
     rules: {

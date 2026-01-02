@@ -455,6 +455,46 @@ export default function Portfolio() {
   return (
 
     <div className="min-h-screen bg-gray-50">
+      
+      {/* Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Riak Mawut Angui Atem",
+            "alternateName": "Riak Mawut",
+            "jobTitle": "Supply Chain & Administration Officer",
+            "description": "Supply Chain Professional with 5+ years experience. Cybersecurity student at University of Juba. Freelance web developer.",
+            "url": "https://riak-portfolio.onrender.com",
+            "image": "https://riak-portfolio.onrender.com/profile-icon.png",
+            "email": "riakmawut3@gmail.com",
+            "telephone": "+211922950783",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Juba",
+              "addressCountry": "South Sudan",
+              "streetAddress": "Muniki Suk Malesha"
+            },
+            "alumniOf": {
+              "@type": "EducationalOrganization",
+              "name": "University of Juba"
+            },
+            "knowsAbout": [
+              "Supply Chain Management",
+              "Procurement",
+              "Logistics",
+              "Cybersecurity",
+              "Web Development",
+              "Next.js",
+              "React",
+              "MongoDB"
+            ],
+            "sameAs": []
+          })
+        }}
+      />
 
       {/* Header */}
 
