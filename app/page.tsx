@@ -534,9 +534,9 @@ export default function Portfolio() {
 
         {mobileMenuOpen && (
 
-          <div className="md:hidden bg-white border-t">
+          <div className="md:hidden bg-white border-t border-gray-200 rounded-b-xl shadow-xl mx-4 mb-2 overflow-hidden">
 
-            <div className="px-2 pt-2 pb-3 space-y-1">
+            <div className="px-4 pt-3 pb-4 space-y-1">
 
               {['About', 'Skills', 'Experience', 'Projects', 'Services', 'Contact'].map((item) => (
 
