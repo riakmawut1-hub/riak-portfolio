@@ -25,17 +25,15 @@ export default function Portfolio() {
 
       name: "Riak Mawut Angui Atem",
 
-      title: "Supply Chain & Administration Officer",
+      title: "Supply Chain & Administration Officer · Software Engineer",
 
-      subtitle: "Procurement · Logistics · Inventory",
-
-      highlight: "Pursuing Cybersecurity at University of Juba (since 2022)",
+      subtitle: "Procurement · Logistics · Inventory · Web Development",
 
       webDev: "I build full responsive websites and web apps — affordable freelance rates.",
 
       cta: "Hit me up",
 
-      description: "Experienced supply chain professional with 5+ years reducing wastage and leading warehouse operations. Currently pursuing Cybersecurity at University of Juba (started 2022). I also design and build full responsive websites and web applications (Next.js, Tailwind, Node, MongoDB); available for freelance work at competitive, low rates."
+      description: "Experienced supply chain professional with 5+ years reducing wastage and leading warehouse operations. I design and build full responsive websites and web applications (Next.js, Tailwind, Node, MongoDB); available for freelance work at competitive, low rates."
 
     },
 
@@ -620,7 +618,7 @@ export default function Portfolio() {
 
                 <span className="text-sm font-medium text-orange-700">
 
-                  Cybersecurity Student • Web Developer
+                  Software Engineer • Supply Chain Professional
 
                 </span>
 
@@ -644,25 +642,7 @@ export default function Portfolio() {
 
               </div>
 
-              <div className="space-y-3 pt-4">
-
-                <div className="flex items-start space-x-3 text-gray-700">
-
-                  <GraduationCap className="text-orange-600 flex-shrink-0 mt-1" size={24} />
-
-                  <div>
-
-                    <p className="font-semibold text-lg" style={{ fontFamily: 'Roboto, sans-serif' }}>{content.hero.highlight}</p>
-
-                    <p className="text-gray-600" style={{ fontFamily: 'Roboto, sans-serif' }}>{content.hero.webDev}</p>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-              <p className="text-gray-600 leading-relaxed text-justify max-w-2xl" style={{ fontFamily: 'Roboto, sans-serif', lineHeight: '1.75' }}>{content.hero.description}</p>
+              <p className="text-gray-600 leading-relaxed text-justify max-w-2xl pt-4" style={{ fontFamily: 'Roboto, sans-serif', lineHeight: '1.75' }}>{content.hero.description}</p>
 
               <div className="flex flex-wrap gap-4 pt-4">
 
