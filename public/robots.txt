@@ -2,5 +2,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://your-domain.onrender.com/sitemap.xml
+Sitemap: https://riak-portfolio.onrender.com/sitemap.xml
 
