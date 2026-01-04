@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-import { Camera, Mail, Phone, MapPin, GraduationCap, Languages, Download, Shield, Code, Server, Database, Globe, ChevronDown, Menu, X, CheckCircle, AlertCircle, Loader } from 'lucide-react';
+import { Camera, Mail, Phone, MapPin, GraduationCap, Languages, Download, Shield, Code, Server, Database, Globe, ChevronDown, Menu, X, CheckCircle, AlertCircle, Loader, Linkedin, Facebook } from 'lucide-react';
 
 // Main Portfolio Application
 
@@ -497,7 +497,10 @@ export default function Portfolio() {
               "React",
               "MongoDB"
             ],
-            "sameAs": []
+            "sameAs": [
+              "https://www.linkedin.com/in/riak-mawut-9019aa20a",
+              "https://www.facebook.com/riak.mawut/"
+            ]
           })
         }}
       />
@@ -1229,6 +1232,28 @@ export default function Portfolio() {
 
               </a>
 
+              <div className="flex items-center space-x-3 sm:space-x-4 pt-2 sm:pt-4">
+                <span className="text-xs sm:text-sm text-gray-600 font-medium">Connect with me:</span>
+                <a
+                  href="https://www.linkedin.com/in/riak-mawut-9019aa20a"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-orange-100 hover:text-orange-600 transition-colors"
+                  aria-label="LinkedIn Profile"
+                >
+                  <Linkedin size={18} className="text-gray-700" />
+                </a>
+                <a
+                  href="https://www.facebook.com/riak.mawut/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-orange-100 hover:text-orange-600 transition-colors"
+                  aria-label="Facebook Profile"
+                >
+                  <Facebook size={18} className="text-gray-700" />
+                </a>
+              </div>
+
             </div>
 
             <div className="order-1 md:order-2">
@@ -1417,6 +1442,27 @@ export default function Portfolio() {
                 Supply Chain Professional & Cybersecurity Student building secure, responsive web solutions.
 
               </p>
+
+              <div className="flex items-center space-x-3 sm:space-x-4 mt-4 sm:mt-6">
+                <a
+                  href="https://www.linkedin.com/in/riak-mawut-9019aa20a"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors"
+                  aria-label="LinkedIn Profile"
+                >
+                  <Linkedin size={18} className="text-white" />
+                </a>
+                <a
+                  href="https://www.facebook.com/riak.mawut/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-600 transition-colors"
+                  aria-label="Facebook Profile"
+                >
+                  <Facebook size={18} className="text-white" />
+                </a>
+              </div>
 
             </div>
 
