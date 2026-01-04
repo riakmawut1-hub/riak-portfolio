@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Landing Page with CMS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .slide-in { animation: slideIn 0.6s ease-out; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .float { animation: float 3s ease-in-out infinite; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <div class="bg-gradient-to-r from-orange-500 to-red-500 w-10 h-10 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">B</span>
+                    </div>
+                    <span class="text-xl font-bold text-gray-800">BusinessHub</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-orange-600 transition">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-orange-600 transition">Services</a>
+                    <a href="#about" class="text-gray-700 hover:text-orange-600 transition">About</a>
+                    <a href="#contact" class="text-gray-700 hover:text-orange-600 transition">Contact</a>
+                    <a href="#cms" class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition">CMS Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-20 bg-gradient-to-br from-orange-50 to-red-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="slide-in">
+                    <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                        Grow Your <span class="text-orange-600">Business</span> Online
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Complete digital solutions for modern businesses. Manage your content, inventory, and customer relationships in one place.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <button onclick="showCMS()" class="bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-700 transition transform hover:scale-105 shadow-lg">
+                            Get Started Free
+                        </button>
+                        <button class="bg-white text-gray-800 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition border-2 border-gray-300">
+                            Watch Demo
+                        </button>
+                    </div>
+                    <div class="mt-8 flex items-center space-x-6">
+                        <div>
+                            <p class="text-3xl font-bold text-orange-600">500+</p>
+                            <p class="text-gray-600">Active Clients</p>
+                        </div>
+                        <div class="h-12 w-px bg-gray-300"></div>
+                        <div>
+                            <p class="text-3xl font-bold text-orange-600">99.9%</p>
+                            <p class="text-gray-600">Uptime</p>
+                        </div>
+                        <div class="h-12 w-px bg-gray-300"></div>
+                        <div>
+                            <p class="text-3xl font-bold text-orange-600">24/7</p>
+                            <p class="text-gray-600">Support</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="float">
+                    <div class="bg-white rounded-2xl shadow-2xl p-8">
+                        <div class="bg-gradient-to-br from-orange-100 to-red-100 rounded-xl h-64 flex items-center justify-center">
+                            <svg class="w-32 h-32 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                        </div>
+                        <div class="mt-4 space-y-2">
+                            <div class="flex items-center justify-between bg-gray-50 p-3 rounded">
+                                <span class="text-sm">Revenue Growth</span>
+                                <span class="text-green-600 font-semibold">+45%</span>
+                            </div>
+                            <div class="flex items-center justify-between bg-gray-50 p-3 rounded">
+                                <span class="text-sm">Active Users</span>
+                                <span class="text-blue-600 font-semibold">2,543</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+                <p class="text-xl text-gray-600">Everything you need to run your business efficiently</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition transform hover:scale-105">
+                    <div class="bg-orange-100 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Content Management</h3>
+                    <p class="text-gray-600 mb-6">Easy-to-use CMS for managing your website content, inventory, and product listings without technical knowledge.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><span class="text-orange-600 mr-2">✓</span> Drag & drop editor</li>
+                        <li class="flex items-center"><span class="text-orange-600 mr-2">✓</span> Real-time updates</li>
+                        <li class="flex items-center"><span class="text-orange-600 mr-2">✓</span> Multi-user access</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition transform hover:scale-105">
+                    <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Inventory Tracking</h3>
+                    <p class="text-gray-600 mb-6">Real-time inventory management with automated alerts, FIFO tracking, and comprehensive reporting tools.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><span class="text-orange-600 mr-2">✓</span> Stock alerts</li>
+                        <li class="flex items-center"><span class="text-orange-600 mr-2">✓</span> FIFO management</li>
+                        <li class="flex items-center"><span class="text-orange-600 mr-2">✓</span> Analytics dashboard</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition transform hover:scale-105">
+                    <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Customer Portal</h3>
+                    <p class="text-gray-600 mb-6">Give your customers access to order tracking, invoices, and support tickets through a branded portal.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><span class="text-orange-600 mr-2">✓</span> Order tracking</li>
+                        <li class="flex items-center"><span class="text-orange-600 mr-2">✓</span> Support tickets</li>
+                        <li class="flex items-center"><span class="text-orange-600 mr-2">✓</span> Custom branding</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CMS Demo Section -->
+    <section id="cms" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">CMS Dashboard Preview</h2>
+                <p class="text-xl text-gray-600">Manage your entire business from one intuitive dashboard</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+                <!-- CMS Navigation -->
+                <div class="bg-gray-800 text-white p-4 flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-orange-600 w-8 h-8 rounded flex items-center justify-center">
+                            <span class="font-bold">B</span>
+                        </div>
+                        <span class="font-semibold">BusinessHub CMS</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <button class="hover:text-orange-400 transition">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                            </svg>
+                        </button>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-8 h-8 bg-orange-600 rounded-full flex items-center justify-center">
+                                <span class="text-sm">RM</span>
+                            </div>
+                            <span class="text-sm">Riak Mawut</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex">
+                    <!-- Sidebar -->
+                    <div class="w-64 bg-gray-50 border-r border-gray-200 p-4">
+                        <nav class="space-y-2">
+                            <a href="#" onclick="showTab('dashboard'); return false;" class="flex items-center space-x-3 bg-orange-100 text-orange-700 p-3 rounded-lg">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
+                                </svg>
+                                <span class="font-semibold">Dashboard</span>
+                            </a>
+                            <a href="#" onclick="showTab('content'); return false;" class="flex items-center space-x-3 text-gray-700 hover:bg-gray-100 p-3 rounded-lg">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                                </svg>
+                                <span>Content</span>
+                            </a>
+                            <a href="#" onclick="showTab('inventory'); return false;" class="flex items-center space-x-3 text-gray-700 hover:bg-gray-100 p-3 rounded-lg">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                                </svg>
+                                <span>Inventory</span>
+                            </a>
+                            <a href="#" onclick="showTab('forms'); return false;" class="flex items-center space-x-3 text-gray-700 hover:bg-gray-100 p-3 rounded-lg">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                                <span>Forms</span>
+                            </a>
+                            <a href="#" class="flex items-center space-x-3 text-gray-700 hover:bg-gray-100 p-3 rounded-lg">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                <span>Settings</span>
+                            </a>
+                        </nav>
+                    </div>
+
+                    <!-- Main Content -->
+                    <div class="flex-1 p-8" id="cmsContent">
+                        <h3 class="text-2xl font-bold mb-6">Dashboard Overview</h3>
+                        
+                        <!-- Stats Grid -->
+                        <div class="grid md:grid-cols-4 gap-6 mb-8">
+                            <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-xl p-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm opacity-80">Total Products</span>
+                                    <svg class="w-8 h-8 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-3xl font-bold">1,247</p>
+                                <p class="text-sm opacity-80 mt-2">↑ 12% from last month</p>
+                            </div>
+
+                            <div class="bg-gradient-to-br from-green-500 to-green-600 text-white rounded-xl p-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm opacity-80">Active Orders</span>
+                                    <svg class="w-8 h-8 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-3xl font-bold">387</p>
+                                <p class="text-sm opacity-80 mt-2">↑ 8% from last week</p>
+                            </div>
+
+                            <div class="bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-xl p-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm opacity-80">Low Stock Items</span>
+                                    <svg class="w-8 h-8 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-3xl font-bold">23</p>
+                                <p class="text-sm opacity-80 mt-2">Needs attention</p>
+                            </div>
+
+                            <div class="bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-xl p-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm opacity-80">Revenue</span>
+                                    <svg class="w-8 h-8 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-3xl font-bold">$47.2K</p>
+                                <p class="text-sm opacity-80 mt-2">↑ 23% from last month</p>
+                            </div>
+                        </div>
+
+                        <!-- Recent Activity -->
+                        <div class="bg-white border border-gray-200 rounded-xl p-6">
+                            <h4 class="text-lg font-bold mb-4">Recent Activity</h4>
+                            <div class="space-y-4">
+                                <div class="flex items-center space-x-4 pb-4 border-b">
+                                    <div class="bg-green-100 rounded-full p-2">
+                                        <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="font-semibold">New order #3847 received</p>
+                                        <p class="text-sm text-gray-600">2 minutes ago</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-4 pb-4 border-b">
+                                    <div class="bg-orange-100 rounded-full p-2">
+                                        <svg class="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="font-semibold">Low stock alert: Label Printer</p>
+                                        <p class="text-sm text-gray-600">15 minutes ago</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="bg-blue-100 rounded-full p-2">
+                                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <p class="font-semibold">Content updated: Homepage banner</p>
+                                        <p class="text-sm text-gray-600">1 hour ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-gray-900 mb-6">Ready to Get Started?</h2>
+            <p class="text-xl text-gray-600 mb-8">Join hundreds of businesses managing their operations efficiently</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <input type="email" placeholder="Enter your email" class="px-6 py-4 rounded-lg border-2 border-gray-300 focus:border-orange-600 focus:outline-none">
+                <button class="bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-700 transition">
+                    Start Free Trial
+                </button>
+            </div>
+            <p class="text-gray-600 mt-4">No credit card required • 14-day free trial</p>
+        </div>
+    </section>
+
+    <script>
+        function showCMS() {
+            document.getElementById('cms').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function showTab(tab) {
+            const content = {
+                dashboard: '<h3 class="text-2xl font-bold mb-4">Dashboard Overview</h3><p class="text-gray-600">View key metrics and recent activity</p>',
+                content: '<h3 class="text-2xl font-bold mb-4">Content Management</h3><p class="text-gray-600">Edit pages, posts, and media</p>',
+                inventory: '<h3 class="text-2xl font-bold mb-4">Inventory Management</h3><p class="text-gray-600">Track stock levels and manage products</p>',
+                forms: '<h3 class="text-2xl font-bold mb-4">Form Builder</h3><p class="text-gray-600">Create and manage contact forms</p>'
+            };
+            document.getElementById('cmsContent').innerHTML = content[tab] || content.dashboard;
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Authentication System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .scanning { animation: pulse 2s ease-in-out infinite; }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .slide-down { animation: slideDown 0.3s ease-out; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 min-h-screen flex items-center justify-center p-4">
+    <!-- Security Background Effect -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-20 left-20 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        <div class="absolute bottom-20 right-20 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse" style="animation-delay: 1s"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="relative z-10 max-w-6xl w-full">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-4 scanning">
+                <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                </svg>
+            </div>
+            <h1 class="text-4xl font-bold text-white mb-2">SecureAuth Portal</h1>
+            <p class="text-blue-200">Enterprise-grade security with multi-factor authentication</p>
+        </div>
+
+        <!-- Grid Layout -->
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Login Form -->
+            <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 shadow-2xl">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-bold text-white">Secure Login</h2>
+                    <div class="flex items-center space-x-2 text-green-400">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                        <span class="text-sm">SSL Encrypted</span>
+                    </div>
+                </div>
+
+                <form onsubmit="handleLogin(event)" class="space-y-6">
+                    <!-- Email -->
+                    <div>
+                        <label class="block text-white mb-2 font-semibold">Email Address</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"></path>
+                                </svg>
+                            </div>
+                            <input type="email" id="email" required class="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50" placeholder="user@example.com">
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div>
+                        <label class="block text-white mb-2 font-semibold">Password</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                                </svg>
+                            </div>
+                            <input type="password" id="password" required class="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50" placeholder="••••••••">
+                            <button type="button" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-white">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <div id="passwordStrength" class="mt-2 h-2 bg-gray-700 rounded-full overflow-hidden hidden">
+                            <div id="strengthBar" class="h-full transition-all duration-300"></div>
+                        </div>
+                    </div>
+
+                    <!-- Remember Me & Forgot Password -->
+                    <div class="flex items-center justify-between">
+                        <label class="flex items-center text-white cursor-pointer">
+                            <input type="checkbox" class="w-4 h-4 rounded border-white/20 bg-white/10 text-blue-500 focus:ring-blue-500">
+                            <span class="ml-2 text-sm">Remember me</span>
+                        </label>
+                        <a href="#" class="text-blue-400 hover:text-blue-300 text-sm">Forgot password?</a>
+                    </div>
+
+                    <!-- Login Button -->
+                    <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all transform hover:scale-105 shadow-lg">
+                        Sign In Securely
+                    </button>
+
+                    <!-- Divider -->
+                    <div class="relative">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-white/20"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-transparent text-gray-400">Or continue with</span>
+                        </div>
+                    </div>
+
+                    <!-- Social Login -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <button type="button" class="flex items-center justify-center space-x-2 bg-white/10 border border-white/20 text-white py-3 rounded-lg hover:bg-white/20 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
+                            </svg>
+                            <span>Google</span>
+                        </button>
+                        <button type="button" class="flex items-center justify-center space-x-2 bg-white/10 border border-white/20 text-white py-3 rounded-lg hover:bg-white/20 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm3.066 8.416c1.133 0 1.947.804 1.947 1.947 0 1.133-.814 1.946-1.947 1.946-1.123 0-1.947-.813-1.947-1.946s.814-1.947 1.947-1.947zm-6.133 0c1.133 0 1.947.804 1.947 1.947 0 1.133-.814 1.946-1.947 1.946-1.123 0-1.947-.813-1.947-1.946s.814-1.947 1.947-1.947zm8.72 5.123c-.61 1.943-2.423 3.319-4.653 3.319-2.24 0-4.043-1.376-4.653-3.319h9.306z"/>
+                            </svg>
+                            <span>GitHub</span>
+                        </button>
+                    </div>
+                </form>
+
+                <p class="text-center text-gray-400 text-sm mt-6">
+                    Don't have an account? <a href="#" class="text-blue-400 hover:text-blue-300">Sign up</a>
+                </p>
+            </div>
+
+            <!-- Security Features -->
+            <div class="space-y-6">
+                <!-- 2FA Panel -->
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 shadow-2xl">
+                    <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+                        <svg class="w-6 h-6 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                        Two-Factor Authentication
+                    </h3>
+                    <p class="text-blue-200 mb-4">Enter the 6-digit code from your authenticator app</p>
+                    <div class="flex space-x-2">
+                        <input type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-bold bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50">
+                        <input type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-bold bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50">
+                        <input type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-bold bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50">
+                        <span class="flex items-center text-white text-2xl">-</span>
+                        <input type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-bold bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50">
+                        <input type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-bold bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50">
+                        <input type="text" maxlength="1" class="w-12 h-12 text-center text-2xl font-bold bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50">
+                    </div>
+                    <button class="w-full mt-4 bg-green-500 text-white py-2 rounded-lg font-semibold hover:bg-green-600 transition">
+                        Verify Code
+                    </button>
+                </div>
+
+                <!-- Security Features List -->
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 shadow-2xl">
+                    <h3 class="text-xl font-bold text-white mb-4">Security Features</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-green-500/20 rounded-full p-2 mt-1">
+                                <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-white font-semibold">256-bit SSL Encryption</p>
+                                <p class="text-blue-200 text-sm">Bank-level security for all data transmission</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-green-500/20 rounded-full p-2 mt-1">
+                                <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-white font-semibold">CORS Protection</p>
+                                <p class="text-blue-200 text-sm">Prevents unauthorized cross-origin requests</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-green-500/20 rounded-full p-2 mt-1">
+                                <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-white font-semibold">Rate Limiting</p>
+                                <p class="text-blue-200 text-sm">Protection against brute force attacks</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-green-500/20 rounded-full p-2 mt-1">
+                                <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-white font-semibold">Input Sanitization</p>
+                                <p class="text-blue-200 text-sm">Prevents XSS and SQL injection attacks</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-3">
+                            <div class="bg-green-500/20 rounded-full p-2 mt-1">
+                                <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-white font-semibold">Session Management</p>
+                                <p class="text-blue-200 text-sm">Secure token-based authentication</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Status -->
+                <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 shadow-2xl">
+                    <h3 class="text-xl font-bold text-white mb-4">System Status</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-blue-200">Firewall Status</span>
+                            <span class="flex items-center text-green-400">
+                                <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                                Active
+                            </span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-blue-200">Threat Detection</span>
+                            <span class="flex items-center text-green-400">
+                                <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                                Monitoring
+                            </span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-blue-200">Last Security Scan</span>
+                            <span class="text-gray-400">2 mins ago</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-blue-200">Threats Blocked Today</span>
+                            <span class="text-white font-semibold">127</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Notification -->
+        <div id="successNotification" class="hidden fixed top-4 right-4 bg-green-500 text-white px-6 py-4 rounded-lg shadow-2xl slide-down">
+            <div class="flex items-center space-x-3">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <div>
+                    <p class="font-semibold">Login Successful!</p>
+                    <p class="text-sm">Redirecting to dashboard...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            const notification = document.getElementById('successNotification');
+            notification.classList.remove('hidden');
+            
+            setTimeout(() => {
+                notification.classList.add('hidden');
+            }, 3000);
+        }
+
+        // Password strength indicator
+        document.getElementById('password').addEventListener('input', function(e) {
+            const password = e.target.value;
+            const strengthBar = document.getElementById('strengthBar');
+            const strengthContainer = document.getElementById('passwordStrength');
+            
+            if (password.length > 0) {
+                strengthContainer.classList.remove('hidden');
+                let strength = 0;
+                
+                if (password.length >= 8) strength += 25;
+                if (/[a-z]/.test(password) && /[A-Z]/.test(password)) strength += 25;
+                if (/\d/.test(password)) strength += 25;
+                if (/[^a-zA-Z\d]/.test(password)) strength += 25;
+                
+                strengthBar.style.width = strength + '%';
+                
+                if (strength <= 25) {
+                    strengthBar.className = 'h-full bg-red-500 transition-all duration-300';
+                } else if (strength <= 50) {
+                    strengthBar.className = 'h-full bg-orange-500 transition-all duration-300';
+                } else if (strength <= 75) {
+                    strengthBar.className = 'h-full bg-yellow-500 transition-all duration-300';
+                } else {
+                    strengthBar.className = 'h-full bg-green-500 transition-all duration-300';
+                }
+            } else {
+                strengthContainer.classList.add('hidden');
+            }
+        });
+
+        // 2FA code input auto-focus
+        const codeInputs = document.querySelectorAll('input[type="text"][maxlength="1"]');
+        codeInputs.forEach((input, index) => {
+            input.addEventListener('input', function() {
+                if (this.value.length === 1 && index < codeInputs.length - 1) {
+                    codeInputs[index + 1].focus();
+                }
+            });
+            
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'Backspace' && this.value.length === 0 && index > 0) {
+                    codeInputs[index - 1].focus();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

@@ -174,7 +174,9 @@ export default function Portfolio() {
 
         tech: "Next.js, Tailwind, MongoDB, Stripe",
 
-        description: "Responsive e-commerce site with secure payment processing and admin dashboard"
+        description: "Responsive e-commerce site with secure payment processing and admin dashboard",
+
+        demoUrl: "/demos/ecommerce-platform.html"
 
       },
 
@@ -184,7 +186,9 @@ export default function Portfolio() {
 
         tech: "React, Node.js, Express, MongoDB",
 
-        description: "Custom CMS for small business with contact form and inventory management"
+        description: "Custom CMS for small business with contact form and inventory management",
+
+        demoUrl: "/demos/business-cms.html"
 
       },
 
@@ -194,7 +198,9 @@ export default function Portfolio() {
 
         tech: "Next.js, MongoDB, Security Headers",
 
-        description: "Demonstrates input sanitization, CORS configuration, rate limiting, and environment-based secrets"
+        description: "Demonstrates input sanitization, CORS configuration, rate limiting, and environment-based secrets",
+
+        demoUrl: "/demos/security-hardened.html"
 
       },
 
@@ -204,7 +210,9 @@ export default function Portfolio() {
 
         tech: "React, Chart.js, REST API",
 
-        description: "Real-time stock tracking with visual analytics and export functionality"
+        description: "Real-time stock tracking with visual analytics and export functionality",
+
+        demoUrl: "/demos/inventory-dashboard.html"
 
       }
 
@@ -953,7 +961,13 @@ export default function Portfolio() {
               ];
 
               return (
-                <div key={index} className="bg-gray-50 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-200 group">
+                <a 
+                  key={index} 
+                  href={project.demoUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-gray-50 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-200 group cursor-pointer block"
+                >
 
                   <div className="aspect-video relative overflow-hidden">
 
@@ -965,6 +979,15 @@ export default function Portfolio() {
 
                     <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
 
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="bg-white/90 backdrop-blur-sm px-6 py-3 rounded-lg shadow-lg">
+                        <span className="text-orange-600 font-semibold flex items-center gap-2">
+                          <Globe className="w-5 h-5" />
+                          View Demo
+                        </span>
+                      </div>
+                    </div>
+
                   </div>
 
                   <div className="p-6">
@@ -973,11 +996,18 @@ export default function Portfolio() {
 
                     <p className="text-sm text-orange-600 font-medium mb-3">{project.tech}</p>
 
-                    <p className="text-gray-600">{project.description}</p>
+                    <p className="text-gray-600 mb-4">{project.description}</p>
+
+                    <div className="flex items-center text-orange-600 text-sm font-medium group-hover:text-orange-700 transition-colors">
+                      <span>View Live Demo</span>
+                      <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
 
                   </div>
 
-                </div>
+                </a>
               );
             })}
 
