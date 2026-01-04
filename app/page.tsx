@@ -508,9 +508,9 @@ export default function Portfolio() {
 
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-14 sm:h-16">
 
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-1.5 sm:space-x-2">
 
               <img 
 
@@ -518,11 +518,11 @@ export default function Portfolio() {
 
                 alt="Riak Mawut Logo"
 
-                className="w-10 h-10 object-contain"
+                className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
 
               />
 
-              <span className="text-xl font-bold text-orange-600">Riak Mawut</span>
+              <span className="text-lg sm:text-xl font-bold text-orange-600">Riak Mawut</span>
 
             </div>
 
@@ -612,19 +612,19 @@ export default function Portfolio() {
 
       {/* Hero Section */}
 
-      <section id="home" className="pt-24 pb-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="home" className="pt-20 sm:pt-24 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 bg-white">
 
         <div className="max-w-7xl mx-auto">
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
 
-            <div className="space-y-6 order-2 md:order-1">
+            <div className="space-y-4 sm:space-y-6 order-2 md:order-1">
 
-              <div className="inline-flex items-center space-x-2 px-4 py-2 bg-orange-50 rounded-full">
+              <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-orange-50 rounded-full">
 
-                <Shield className="text-orange-600" size={20} />
+                <Shield className="text-orange-600" size={18} />
 
-                <span className="text-sm font-medium text-orange-700">
+                <span className="text-xs sm:text-sm font-medium text-orange-700">
 
                   Software Engineer • Supply Chain Professional
 
@@ -632,33 +632,33 @@ export default function Portfolio() {
 
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900" style={{ fontFamily: 'Roboto, sans-serif' }}>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Roboto, sans-serif' }}>
 
                 Hi, I'm <span className="text-orange-600">{content.hero.name.split(' ')[0]}</span>
 
               </h1>
 
-              <div className="space-y-2">
+              <div className="space-y-1 sm:space-y-2">
 
-                <h2 className="text-2xl sm:text-3xl font-semibold text-gray-700" style={{ fontFamily: 'Roboto, sans-serif' }}>
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-700 leading-tight" style={{ fontFamily: 'Roboto, sans-serif' }}>
 
                   {content.hero.title}
 
                 </h2>
 
-                <p className="text-lg text-gray-600" style={{ fontFamily: 'Roboto, sans-serif' }}>{content.hero.subtitle}</p>
+                <p className="text-base sm:text-lg text-gray-600" style={{ fontFamily: 'Roboto, sans-serif' }}>{content.hero.subtitle}</p>
 
               </div>
 
-              <p className="text-gray-600 leading-relaxed text-justify max-w-2xl pt-4" style={{ fontFamily: 'Roboto, sans-serif', lineHeight: '1.75' }}>{content.hero.description}</p>
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed text-justify max-w-2xl pt-2 sm:pt-4" style={{ fontFamily: 'Roboto, sans-serif', lineHeight: '1.75' }}>{content.hero.description}</p>
 
-              <div className="flex flex-wrap gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 pt-2 sm:pt-4">
 
                 <button
 
                   onClick={() => scrollToSection('contact')}
 
-                  className="px-8 py-3 bg-orange-600 text-white font-medium rounded-lg hover:bg-orange-700 transition-colors"
+                  className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 bg-orange-600 text-white text-sm sm:text-base font-medium rounded-lg hover:bg-orange-700 transition-colors"
 
                   style={{ fontFamily: 'Roboto, sans-serif' }}
 
@@ -672,7 +672,7 @@ export default function Portfolio() {
 
                   onClick={() => scrollToSection('projects')}
 
-                  className="px-8 py-3 border-2 border-gray-300 text-gray-700 font-medium rounded-lg hover:border-orange-600 hover:text-orange-600 transition-colors"
+                  className="w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 border-2 border-gray-300 text-gray-700 text-sm sm:text-base font-medium rounded-lg hover:border-orange-600 hover:text-orange-600 transition-colors"
 
                   style={{ fontFamily: 'Roboto, sans-serif' }}
 
@@ -684,19 +684,19 @@ export default function Portfolio() {
 
               </div>
 
-              <div className="flex flex-wrap gap-4 pt-6 text-sm text-gray-600">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 pt-4 sm:pt-6 text-xs sm:text-sm text-gray-600">
 
                 <div className="flex items-center space-x-2">
 
-                  <MapPin size={16} className="text-orange-600" />
+                  <MapPin size={14} className="text-orange-600 flex-shrink-0" />
 
-                  <span>{content.contact.location}</span>
+                  <span className="break-words">{content.contact.location}</span>
 
                 </div>
 
                 <div className="flex items-center space-x-2">
 
-                  <GraduationCap size={16} className="text-orange-600" />
+                  <GraduationCap size={14} className="text-orange-600 flex-shrink-0" />
 
                   <span>University of Juba</span>
 
@@ -704,7 +704,7 @@ export default function Portfolio() {
 
                 <div className="flex items-center space-x-2">
 
-                  <Languages size={16} className="text-orange-600" />
+                  <Languages size={14} className="text-orange-600 flex-shrink-0" />
 
                   <span>English, Arabic, Dinka</span>
 
@@ -714,13 +714,13 @@ export default function Portfolio() {
 
             </div>
 
-            <div className="relative z-10 mb-8 order-1 md:order-2">
+            <div className="relative z-10 mb-6 sm:mb-8 order-1 md:order-2">
 
-              <div className="relative bg-gradient-to-br from-orange-100 to-orange-50 rounded-2xl p-8 shadow-lg z-0">
+              <div className="relative bg-gradient-to-br from-orange-100 to-orange-50 rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg z-0">
 
-                <div className="absolute top-4 right-4 bg-white px-4 py-2 rounded-full shadow-md z-20 animate-smooth-pulse">
+                <div className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-md z-20 animate-smooth-pulse">
 
-                  <span className="text-sm font-semibold text-orange-600">Available for Freelance</span>
+                  <span className="text-xs sm:text-sm font-semibold text-orange-600">Available for Freelance</span>
 
                 </div>
 
@@ -738,17 +738,17 @@ export default function Portfolio() {
 
               
 
-              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg border-2 border-orange-100 z-30 animate-smooth-pulse" style={{ animationDelay: '0.5s' } as React.CSSProperties}>
+              <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-white p-4 sm:p-6 rounded-xl shadow-lg border-2 border-orange-100 z-30 animate-smooth-pulse hidden sm:block" style={{ animationDelay: '0.5s' } as React.CSSProperties}>
 
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-2 sm:space-x-3">
 
-                  <Shield className="text-orange-600" size={32} />
+                  <Shield className="text-orange-600" size={24} />
 
                   <div>
 
-                    <p className="font-semibold text-gray-900">Security-Focused</p>
+                    <p className="font-semibold text-sm sm:text-base text-gray-900">Security-Focused</p>
 
-                    <p className="text-sm text-gray-600">Secure by Design</p>
+                    <p className="text-xs sm:text-sm text-gray-600">Secure by Design</p>
 
                   </div>
 
@@ -772,19 +772,19 @@ export default function Portfolio() {
 
       {/* About Section */}
 
-      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section id="about" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
 
         <div className="max-w-6xl mx-auto">
 
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-12" style={{ fontFamily: 'Roboto, sans-serif' }}>About</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-8 sm:mb-12" style={{ fontFamily: 'Roboto, sans-serif' }}>About</h2>
 
-          <div className="grid md:grid-cols-2 gap-12 items-start">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-start">
 
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6 order-2 md:order-1">
 
               {content.about.paragraphs.map((paragraph, index) => (
 
-                <p key={index} className="text-gray-700 leading-relaxed text-justify text-base sm:text-lg" style={{ fontFamily: 'Roboto, sans-serif' }}>
+                <p key={index} className="text-gray-700 leading-relaxed text-justify text-sm sm:text-base md:text-lg" style={{ fontFamily: 'Roboto, sans-serif' }}>
 
                   {paragraph}
 
@@ -794,7 +794,7 @@ export default function Portfolio() {
 
             </div>
 
-            <div className="relative">
+            <div className="relative order-1 md:order-2">
 
               <div className="rounded-xl overflow-hidden shadow-lg">
 
@@ -820,25 +820,25 @@ export default function Portfolio() {
 
       {/* Skills Section */}
 
-      <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="skills" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
 
         <div className="max-w-6xl mx-auto">
 
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Core Competencies</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2 sm:mb-4">Core Competencies</h2>
 
-          <p className="text-gray-600 mb-12">Supply Chain Expertise + Technical Skills</p>
+          <p className="text-sm sm:text-base text-gray-600 mb-8 sm:mb-12">Supply Chain Expertise + Technical Skills</p>
 
           
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
 
             {content.skills.map((skill, index) => (
 
-              <div key={index} className="flex items-start space-x-3 p-4 bg-gray-50 rounded-lg hover:bg-orange-50 transition-colors">
+              <div key={index} className="flex items-start space-x-2 sm:space-x-3 p-3 sm:p-4 bg-gray-50 rounded-lg hover:bg-orange-50 transition-colors">
 
-                <CheckCircle className="text-orange-600 flex-shrink-0 mt-1" size={20} />
+                <CheckCircle className="text-orange-600 flex-shrink-0 mt-0.5 sm:mt-1" size={18} />
 
-                <span className="text-gray-700">{skill}</span>
+                <span className="text-sm sm:text-base text-gray-700">{skill}</span>
 
               </div>
 
@@ -846,7 +846,7 @@ export default function Portfolio() {
 
           </div>
 
-          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
 
             {[
 
@@ -860,13 +860,13 @@ export default function Portfolio() {
 
             ].map((item, index) => (
 
-              <div key={index} className="p-6 bg-gradient-to-br from-orange-50 to-white rounded-xl border border-orange-100">
+              <div key={index} className="p-4 sm:p-6 bg-gradient-to-br from-orange-50 to-white rounded-xl border border-orange-100">
 
-                <item.icon className="text-orange-600 mb-3" size={32} />
+                <item.icon className="text-orange-600 mb-2 sm:mb-3" size={28} />
 
-                <h3 className="font-semibold text-gray-900 mb-1">{item.label}</h3>
+                <h3 className="text-sm sm:text-base font-semibold text-gray-900 mb-1">{item.label}</h3>
 
-                <p className="text-sm text-gray-600">{item.tech}</p>
+                <p className="text-xs sm:text-sm text-gray-600">{item.tech}</p>
 
               </div>
 
@@ -880,47 +880,47 @@ export default function Portfolio() {
 
       {/* Experience Section */}
 
-      <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section id="experience" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
 
         <div className="max-w-6xl mx-auto">
 
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-12">Professional Experience</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-8 sm:mb-12">Professional Experience</h2>
 
           
 
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
 
             {content.experience.map((job, index) => (
 
-              <div key={index} className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div key={index} className="bg-white p-4 sm:p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
 
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3 sm:mb-4">
 
                   <div>
 
-                    <h3 className="text-xl font-bold text-gray-900">{job.title}</h3>
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900">{job.title}</h3>
 
-                    <p className="text-orange-600 font-medium">{job.company}</p>
+                    <p className="text-base sm:text-lg text-orange-600 font-medium">{job.company}</p>
 
-                    <p className="text-sm text-gray-600">{job.location}</p>
+                    <p className="text-xs sm:text-sm text-gray-600">{job.location}</p>
 
                   </div>
 
-                  <span className="text-sm font-medium text-gray-600 mt-2 sm:mt-0">{job.period}</span>
+                  <span className="text-xs sm:text-sm font-medium text-gray-600 mt-2 sm:mt-0">{job.period}</span>
 
                 </div>
 
                 
 
-                <ul className="space-y-2 mt-4">
+                <ul className="space-y-2 sm:space-y-2 mt-3 sm:mt-4">
 
                   {job.highlights.map((highlight, idx) => (
 
-                    <li key={idx} className="flex items-start space-x-3">
+                    <li key={idx} className="flex items-start space-x-2 sm:space-x-3">
 
-                      <span className="text-orange-600 mt-1">•</span>
+                      <span className="text-orange-600 mt-1 flex-shrink-0">•</span>
 
-                      <span className="text-gray-700">{highlight}</span>
+                      <span className="text-sm sm:text-base text-gray-700">{highlight}</span>
 
                     </li>
 
@@ -940,17 +940,17 @@ export default function Portfolio() {
 
       {/* Projects Section */}
 
-      <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="projects" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
 
         <div className="max-w-6xl mx-auto">
 
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Projects & Portfolio</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2 sm:mb-4">Projects & Portfolio</h2>
 
-          <p className="text-gray-600 mb-12">Sample projects demonstrating full-stack development and security practices</p>
+          <p className="text-sm sm:text-base text-gray-600 mb-8 sm:mb-12">Sample projects demonstrating full-stack development and security practices</p>
 
           
 
-          <div className="grid sm:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
 
             {content.projects.map((project, index) => {
               const imageMap = [
@@ -990,17 +990,17 @@ export default function Portfolio() {
 
                   </div>
 
-                  <div className="p-6">
+                  <div className="p-4 sm:p-6">
 
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
 
-                    <p className="text-sm text-orange-600 font-medium mb-3">{project.tech}</p>
+                    <p className="text-xs sm:text-sm text-orange-600 font-medium mb-2 sm:mb-3">{project.tech}</p>
 
-                    <p className="text-gray-600 mb-4">{project.description}</p>
+                    <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">{project.description}</p>
 
-                    <div className="flex items-center text-orange-600 text-sm font-medium group-hover:text-orange-700 transition-colors">
+                    <div className="flex items-center text-orange-600 text-xs sm:text-sm font-medium group-hover:text-orange-700 transition-colors">
                       <span>View Live Demo</span>
-                      <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-3 h-3 sm:w-4 sm:h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                     </div>
@@ -1019,17 +1019,17 @@ export default function Portfolio() {
 
       {/* Services Section */}
 
-      <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section id="services" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
 
         <div className="max-w-6xl mx-auto">
 
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Services & Pricing</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2 sm:mb-4">Services & Pricing</h2>
 
-          <p className="text-gray-600 mb-12">Affordable web development for small businesses and startups</p>
+          <p className="text-sm sm:text-base text-gray-600 mb-8 sm:mb-12">Affordable web development for small businesses and startups</p>
 
           
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
 
             {content.services.map((service, index) => (
 
@@ -1067,7 +1067,7 @@ export default function Portfolio() {
 
                 {index === 1 && (
 
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-orange-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                  <div className="absolute -top-3 sm:-top-4 left-1/2 transform -translate-x-1/2 bg-orange-600 text-white px-3 sm:px-4 py-0.5 sm:py-1 rounded-full text-xs sm:text-sm font-semibold">
 
                     Popular
 
@@ -1075,19 +1075,19 @@ export default function Portfolio() {
 
                 )}
 
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{service.tier}</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">{service.tier}</h3>
 
-                <p className="text-3xl font-bold text-orange-600 mb-6">{service.price}</p>
+                <p className="text-2xl sm:text-3xl font-bold text-orange-600 mb-4 sm:mb-6">{service.price}</p>
 
-                <ul className="space-y-3">
+                <ul className="space-y-2 sm:space-y-3">
 
                   {service.features.map((feature, idx) => (
 
-                    <li key={idx} className="flex items-start space-x-3">
+                    <li key={idx} className="flex items-start space-x-2 sm:space-x-3">
 
-                      <CheckCircle className="text-orange-600 flex-shrink-0 mt-1" size={18} />
+                      <CheckCircle className="text-orange-600 flex-shrink-0 mt-0.5 sm:mt-1" size={16} />
 
-                      <span className="text-gray-700">{feature}</span>
+                      <span className="text-sm sm:text-base text-gray-700">{feature}</span>
 
                     </li>
 
@@ -1101,33 +1101,33 @@ export default function Portfolio() {
 
           </div>
 
-          <div className="bg-orange-50 border-2 border-orange-200 rounded-xl p-8 text-center">
+          <div className="bg-orange-50 border-2 border-orange-200 rounded-xl p-6 sm:p-8 text-center">
 
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">What I Offer</h3>
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">What I Offer</h3>
 
-            <div className="grid sm:grid-cols-3 gap-6 text-left max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 text-left max-w-4xl mx-auto">
 
               <div>
 
-                <h4 className="font-semibold text-gray-900 mb-2">Responsive Websites & Web Apps</h4>
+                <h4 className="text-sm sm:text-base font-semibold text-gray-900 mb-2">Responsive Websites & Web Apps</h4>
 
-                <p className="text-sm text-gray-700">Landing pages, business sites, admin dashboards, and single-page applications</p>
+                <p className="text-xs sm:text-sm text-gray-700">Landing pages, business sites, admin dashboards, and single-page applications</p>
 
               </div>
 
               <div>
 
-                <h4 className="font-semibold text-gray-900 mb-2">Security-Aware Development</h4>
+                <h4 className="text-sm sm:text-base font-semibold text-gray-900 mb-2">Security-Aware Development</h4>
 
-                <p className="text-sm text-gray-700">Secure configuration, input validation, CORS, environment secrets</p>
+                <p className="text-xs sm:text-sm text-gray-700">Secure configuration, input validation, CORS, environment secrets</p>
 
               </div>
 
               <div>
 
-                <h4 className="font-semibold text-gray-900 mb-2">Affordable Pricing</h4>
+                <h4 className="text-sm sm:text-base font-semibold text-gray-900 mb-2">Affordable Pricing</h4>
 
-                <p className="text-sm text-gray-700">Competitive rates for small projects, MVPs, and early-stage startups</p>
+                <p className="text-xs sm:text-sm text-gray-700">Competitive rates for small projects, MVPs, and early-stage startups</p>
 
               </div>
 
@@ -1141,13 +1141,13 @@ export default function Portfolio() {
 
       {/* Contact Section */}
 
-      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-white scroll-mt-20">
+      <section id="contact" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-white scroll-mt-20">
 
         <div className="max-w-4xl mx-auto">
 
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Get In Touch</h2>
 
-          <p className="text-gray-600 mb-12">
+          <p className="text-sm sm:text-base text-gray-600 mb-8 sm:mb-12">
 
             I'm available for Executive Assistant, Administrative, Logistics, Supply Chain, IT support roles, 
 
@@ -1155,63 +1155,63 @@ export default function Portfolio() {
 
           </p>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-12">
 
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6 order-2 md:order-1">
 
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Contact Information</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">Contact Information</h3>
 
               
 
-              <a href={`tel:${content.contact.phone}`} className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-orange-50 transition-colors">
+              <a href={`tel:${content.contact.phone}`} className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 bg-gray-50 rounded-lg hover:bg-orange-50 transition-colors">
 
-                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
 
-                  <Phone className="text-orange-600" size={24} />
-
-                </div>
-
-                <div>
-
-                  <p className="text-sm text-gray-600">Phone</p>
-
-                  <p className="font-semibold text-gray-900">{content.contact.phone}</p>
+                  <Phone className="text-orange-600" size={20} />
 
                 </div>
 
-              </a>
+                <div className="min-w-0 flex-1">
 
-              <a href={`mailto:${content.contact.email}`} className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-orange-50 transition-colors">
+                  <p className="text-xs sm:text-sm text-gray-600">Phone</p>
 
-                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-
-                  <Mail className="text-orange-600" size={24} />
-
-                </div>
-
-                <div>
-
-                  <p className="text-sm text-gray-600">Email</p>
-
-                  <p className="font-semibold text-gray-900">{content.contact.email}</p>
+                  <p className="text-sm sm:text-base font-semibold text-gray-900 break-all">{content.contact.phone}</p>
 
                 </div>
 
               </a>
 
-              <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+              <a href={`mailto:${content.contact.email}`} className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 bg-gray-50 rounded-lg hover:bg-orange-50 transition-colors">
 
-                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
 
-                  <MapPin className="text-orange-600" size={24} />
+                  <Mail className="text-orange-600" size={20} />
 
                 </div>
 
-                <div>
+                <div className="min-w-0 flex-1">
 
-                  <p className="text-sm text-gray-600">Location</p>
+                  <p className="text-xs sm:text-sm text-gray-600">Email</p>
 
-                  <p className="font-semibold text-gray-900">{content.contact.location}</p>
+                  <p className="text-sm sm:text-base font-semibold text-gray-900 break-all">{content.contact.email}</p>
+
+                </div>
+
+              </a>
+
+              <div className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 bg-gray-50 rounded-lg">
+
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+
+                  <MapPin className="text-orange-600" size={20} />
+
+                </div>
+
+                <div className="min-w-0 flex-1">
+
+                  <p className="text-xs sm:text-sm text-gray-600">Location</p>
+
+                  <p className="text-sm sm:text-base font-semibold text-gray-900 break-words">{content.contact.location}</p>
 
                 </div>
 
@@ -1220,10 +1220,10 @@ export default function Portfolio() {
               <a 
                 href="/resume.pdf" 
                 download
-                className="w-full flex items-center justify-center space-x-2 p-4 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-colors"
+                className="w-full flex items-center justify-center space-x-2 p-3 sm:p-4 bg-orange-600 text-white text-sm sm:text-base font-semibold rounded-lg hover:bg-orange-700 transition-colors"
               >
 
-                <Download size={20} />
+                <Download size={18} />
 
                 <span>Download CV (PDF)</span>
 
@@ -1231,12 +1231,12 @@ export default function Portfolio() {
 
             </div>
 
-            <div>
+            <div className="order-1 md:order-2">
 
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Send a Message</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">Send a Message</h3>
 
               
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
 
                 <input
 
@@ -1248,7 +1248,7 @@ export default function Portfolio() {
 
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
 
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-600 transition-colors"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:border-orange-600 transition-colors"
 
                 />
 
@@ -1264,7 +1264,7 @@ export default function Portfolio() {
 
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
 
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-600 transition-colors"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:border-orange-600 transition-colors"
 
                   required
 
@@ -1282,7 +1282,7 @@ export default function Portfolio() {
 
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
 
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-600 transition-colors"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:border-orange-600 transition-colors"
 
                   required
 
@@ -1300,7 +1300,7 @@ export default function Portfolio() {
 
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
 
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-600 transition-colors"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:border-orange-600 transition-colors"
 
                 />
 
@@ -1318,7 +1318,7 @@ export default function Portfolio() {
 
                   rows={5}
 
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-600 transition-colors resize-none"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:border-orange-600 transition-colors resize-none"
 
                   required
 
@@ -1326,11 +1326,11 @@ export default function Portfolio() {
 
                 {formStatus.error && (
 
-                  <div className="flex items-center space-x-2 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
+                  <div className="flex items-center space-x-2 p-3 sm:p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
 
-                    <AlertCircle size={20} />
+                    <AlertCircle size={18} />
 
-                    <span className="text-sm">{formStatus.error}</span>
+                    <span className="text-xs sm:text-sm">{formStatus.error}</span>
 
                   </div>
 
@@ -1338,11 +1338,11 @@ export default function Portfolio() {
 
                 {formStatus.success && (
 
-                  <div className="flex items-center space-x-2 p-4 bg-green-50 border border-green-200 rounded-lg text-green-700">
+                  <div className="flex items-center space-x-2 p-3 sm:p-4 bg-green-50 border border-green-200 rounded-lg text-green-700">
 
-                    <CheckCircle size={20} />
+                    <CheckCircle size={18} />
 
-                    <span className="text-sm">Message sent successfully! I'll get back to you soon.</span>
+                    <span className="text-xs sm:text-sm">Message sent successfully! I'll get back to you soon.</span>
 
                   </div>
 
@@ -1354,7 +1354,7 @@ export default function Portfolio() {
 
                   disabled={formStatus.loading}
 
-                  className="w-full py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                  className="w-full py-2.5 sm:py-3 bg-orange-600 text-white text-sm sm:text-base font-semibold rounded-lg hover:bg-orange-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
 
                 >
 
@@ -1388,15 +1388,15 @@ export default function Portfolio() {
 
       {/* Footer */}
 
-      <footer className="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+      <footer className="bg-gray-900 text-white py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
 
         <div className="max-w-6xl mx-auto">
 
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
 
             <div>
 
-              <div className="flex items-center space-x-2 mb-4">
+              <div className="flex items-center space-x-2 mb-3 sm:mb-4">
 
                 <img 
 
@@ -1404,15 +1404,15 @@ export default function Portfolio() {
 
                   alt="Riak Mawut Logo"
 
-                  className="w-10 h-10 object-contain"
+                  className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
 
                 />
 
-                <span className="text-xl font-bold text-orange-600">Riak Mawut</span>
+                <span className="text-lg sm:text-xl font-bold text-orange-600">Riak Mawut</span>
 
               </div>
 
-              <p className="text-gray-400 text-sm">
+              <p className="text-gray-400 text-xs sm:text-sm">
 
                 Supply Chain Professional & Cybersecurity Student building secure, responsive web solutions.
 
@@ -1422,9 +1422,9 @@ export default function Portfolio() {
 
             <div>
 
-              <h4 className="font-semibold mb-4">Quick Links</h4>
+              <h4 className="text-sm sm:text-base font-semibold mb-3 sm:mb-4">Quick Links</h4>
 
-              <div className="space-y-2 text-sm">
+              <div className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm">
 
                 {['About', 'Skills', 'Experience', 'Projects', 'Services', 'Contact'].map((item) => (
 
@@ -1434,7 +1434,7 @@ export default function Portfolio() {
 
                     onClick={() => scrollToSection(item.toLowerCase())}
 
-                    className="block text-gray-400 hover:text-orange-400 transition-colors"
+                    className="block text-gray-400 hover:text-orange-400 transition-colors text-left"
 
                   >
 
@@ -1450,9 +1450,9 @@ export default function Portfolio() {
 
             <div>
 
-              <h4 className="font-semibold mb-4">Education & Certification</h4>
+              <h4 className="text-sm sm:text-base font-semibold mb-3 sm:mb-4">Education & Certification</h4>
 
-              <div className="space-y-2 text-sm text-gray-400">
+              <div className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-gray-400">
 
                 <p>Cybersecurity Degree (University of Juba)</p>
 
@@ -1466,15 +1466,15 @@ export default function Portfolio() {
 
           </div>
 
-          <div className="border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-400">
+          <div className="border-t border-gray-800 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm text-gray-400">
 
-            <p>© 2026 Riak Mawut Angui Atem — All rights reserved.</p>
+            <p className="text-center sm:text-left mb-3 sm:mb-0">© 2026 Riak Mawut Angui Atem — All rights reserved.</p>
 
             <button 
 
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
 
-              className="mt-4 sm:mt-0 text-orange-400 hover:text-orange-300 transition-colors"
+              className="text-orange-400 hover:text-orange-300 transition-colors"
 
             >
 
