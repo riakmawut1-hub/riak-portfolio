@@ -25,15 +25,15 @@ export default function Portfolio() {
 
       name: "Riak Mawut Angui Atem",
 
-      title: "Supply Chain & Administration Officer · Software Engineer",
+      title: "Finance & Logistics Professional · Software Engineer",
 
-      subtitle: "Procurement · Logistics · Inventory · Web Development",
+      subtitle: "Humanitarian Operations · Procurement · Supply Chain · Web Development",
 
       webDev: "I build full responsive websites and web apps — affordable freelance rates.",
 
       cta: "Hit me up",
 
-      description: "Experienced supply chain professional with 5+ years reducing wastage and leading warehouse operations. I design and build full responsive websites and web applications (Next.js, Tailwind, Node, MongoDB); available for freelance work at competitive, low rates."
+      description: "Results-driven Finance and Logistics professional with 2.5+ years supporting humanitarian health programmes in South Sudan. Expert in financial management, procurement cycle administration, and supply chain coordination. I also design and build full responsive websites and web applications (Next.js, Tailwind, Node, MongoDB); available for freelance work at competitive rates."
 
     },
 
@@ -41,42 +41,50 @@ export default function Portfolio() {
 
       phone: "+211 922 950 783",
 
-      email: "riakmawut3@gmail.com",
+      email: "Riakmawut68@gmail.com",
 
-      location: "Muniki Suk Malesha, Juba, South Sudan"
+      location: "Muniki, Juba, South Sudan"
 
     },
 
     about: {
       paragraphs: [
-        "My name is Riak Mawut Angui Atem. I am a dedicated supply chain and administration professional with over five years of experience in procurement, logistics, inventory control, and administrative coordination across complex operating environments. My career began in supply chain and logistics, where I developed strong organizational discipline, accountability, and process-optimization skills while managing procurement operations and inventory at scale.",
-        "Since 2022, I have been pursuing a degree in Cybersecurity at the University of Juba, driven by a strong interest in secure systems, data protection, and resilient digital infrastructure. Through my studies and independent practice, I have developed practical skills in secure system design, secure coding practices, threat awareness, and risk-conscious development.",
-        "In parallel, I design and build fully responsive websites and web applications, ranging from static marketing pages to dynamic applications using REST APIs and MongoDB backends. My work emphasizes accessibility, mobile-first design, secure defaults, clean architecture, and cost-effective deployment strategies.",
-        "Professionally, I am detail-oriented, analytical, and reliability-driven. I value clarity, security, and efficiency in both physical operations and digital systems. I offer affordable freelance services for small businesses and personal projects, with a focus on delivering practical, secure, and scalable solutions."
+        "My name is Riak Mawut Angui Atem. I am a results-driven Finance and Logistics professional with over two and a half years of progressive experience supporting humanitarian health programmes in South Sudan. I demonstrate proven expertise in end-to-end financial management, procurement cycle administration, supply chain coordination, and inventory control within donor-funded and NGO operational environments.",
+        "Throughout my career, I have developed exceptional proficiency in upholding strict accountability standards, donor compliance frameworks, and audit-ready documentation practices. I am skilled in deploying QuickBooks, ERPs, and advanced Excel-based systems to drive operational efficiency and transparent reporting. My experience spans financial documentation, accounts payable/receivable processing, invoice verification, bank reconciliation, and comprehensive expenditure tracking.",
+        "Currently in my 4th year pursuing a Bachelor's degree in Cybersecurity at the University of Juba, where I have developed practical coding skills and expertise in secure systems design. Through my studies and independent practice, I design and build fully responsive websites and web applications using modern frameworks like Next.js, React, and MongoDB. My web development work emphasizes accessibility, mobile-first design, secure defaults, clean architecture, and cost-effective deployment strategies.",
+        "I am recognized for meticulous attention to detail, sound judgment under pressure, and the ability to collaborate effectively within multidisciplinary humanitarian teams. Professionally, I am detail-oriented, analytical, accountability-driven, and committed to leveraging financial acumen, logistics expertise, and technical skills to strengthen programme delivery. I offer affordable freelance services for web development and technical solutions for small businesses and personal projects."
       ]
     },
 
     skills: [
 
-      "Procurement Planning & Inventory Control (FIFO)",
+      "Financial Management & Accounting",
 
-      "Vendor Negotiation & Logistics Coordination",
+      "Voucher Preparation & Audit-Ready Documentation",
 
-      "Financial Management & Reporting",
+      "QuickBooks (Journal Entries, Ledger Posting, Bank Reconciliation)",
 
-      "Team Leadership & Training",
+      "Accounts Payable/Receivable Processing & Reconciliation",
 
-      "MS Office Suite & Adobe Photoshop",
+      "Procurement Cycle Administration (RFQ, RFP, Tendering, Bid Evaluation)",
+
+      "Supply Chain Coordination & Vendor Management",
+
+      "Inventory Control & Warehouse Operations",
+
+      "Advanced Microsoft Excel (Dashboards, Tracking Systems, Data Analysis)",
+
+      "Financial Reporting & Donor Compliance",
 
       "Web Development (Next.js, Tailwind, React)",
 
       "Backend Development (Node.js, Express, MongoDB)",
 
-      "Security Fundamentals & Secure Coding Practices",
-
       "Database Management & API Development",
 
-      "Responsive Design & Mobile-First Approach"
+      "Responsive Design & Mobile-First Approach",
+
+      "Security Fundamentals & Secure Coding Practices"
 
     ],
 
@@ -84,31 +92,41 @@ export default function Portfolio() {
 
       {
 
-        title: "Administration Section Head",
+        title: "Logistics & Administrative Assistant",
 
-        company: "Mayar Medical Center",
+        company: "Mayar Medical Centre",
 
         location: "Juba, South Sudan",
 
-        period: "December 2024 – December 2025",
+        period: "July 2025 – April 2026",
 
         highlights: [
 
-          "Coordinated incoming and outgoing correspondence, managing confidential information and ensuring effective communication within the organization",
+          "Managed the full procurement cycle for medical and non-medical supplies — including RFQ preparation, supplier coordination, competitive bid evaluation, and purchase order processing — in strict compliance with internal controls and organisational standards.",
 
-          "Organized meetings, conferences, and events, providing full logistical support, preparing agendas, and distributing minutes",
+          "Coordinated end-to-end logistics for pharmaceuticals, medical equipment, and consumables, ensuring timely and accurate delivery to sustain uninterrupted healthcare service delivery.",
 
-          "Managed the executive calendar, scheduled appointments, arranged official travel and accommodations, and handled stakeholder interactions",
+          "Maintained robust inventory management systems for pharmaceuticals, medical consumables, and general supplies, including real-time stock tracking, periodic reconciliation, and expiry date monitoring to prevent waste and stockouts.",
 
-          "Served as the main point of contact for client inquiries and stakeholder communications, providing timely and professional responses",
+          "Oversaw warehouse operations and storage best practices, ensuring proper handling, systematic organisation, and full accountability of all medical and non-medical stock.",
 
-          "Handled visitor reception, navigated clients within the office, and provided refreshments and hospitality services",
+          "Verified supplier invoices against purchase orders, delivery notes, and contracts, ensuring 100% accuracy and donor compliance prior to payment authorisation.",
 
-          "Provided phone support, answered calls, took messages, and assisted in routine client inquiries",
+          "Prepared payment vouchers and maintained comprehensive financial documentation to support transparent recordkeeping, operational audits, and donor reporting requirements.",
 
-          "Monitored budgets and prepared expenditure reports to support compliance",
+          "Supported financial operations including petty cash management, expenditure tracking, and accounting processes using QuickBooks and Excel-based financial tools.",
 
-          "Maintained detailed financial records, ensuring transparency and accuracy"
+          "Maintained and regularly updated supplier databases; monitored vendor performance to ensure reliability, cost-effectiveness, and sustained service quality.",
+
+          "Conducted consumption trend analysis to inform procurement planning and prevent critical stockouts of essential medical supplies.",
+
+          "Designed and maintained Excel-based tracking tools for inventory management, procurement activity, and financial data reporting, improving data accessibility for management decision-making.",
+
+          "Ensured full compliance with internal policies, standard operating procedures, and accountability standards across all logistics, procurement, and administrative functions.",
+
+          "Facilitated cross-functional coordination between medical, administrative, and finance teams to align supply chain activities with programme delivery priorities.",
+
+          "Produced operational and financial reports to support management oversight, programme review, and donor accountability processes."
 
         ]
 
@@ -116,49 +134,33 @@ export default function Portfolio() {
 
       {
 
-        title: "Supply Chain Officer/Assistant",
+        title: "Finance & Administrative Assistant",
 
-        company: "Awake General Trading & Entrepreneurship Co. Ltd",
+        company: "Favor Africa Ministries International",
 
         location: "Juba, South Sudan",
 
-        period: "January 2020 – January 2025",
+        period: "January 2024 – June 2025",
 
         highlights: [
 
-          "Oversaw end-to-end supply chain operations, including procurement planning, order processing, and vendor engagement",
+          "Executed end-to-end financial documentation encompassing voucher preparation, payment requests, and expenditure tracking to underpin accurate programme budgeting and donor reporting.",
 
-          "Conducted supplier evaluations, negotiated terms, and ensured quality and compliance in all transactions",
+          "Verified all supplier invoices against purchase orders and delivery notes, ensuring full compliance and elimination of discrepancies across programme financial records.",
 
-          "Monitored stock worth over 10M SSP using FIFO methods, reducing wastage by 20%",
+          "Maintained audit-ready financial filing systems in alignment with internal controls, donor requirements, and international accountability standards.",
 
-          "Implemented FIFO stock control, minimizing wastage and improving inventory accuracy by 20%",
+          "Supported the full procurement process by preparing RFQs, conducting comparative quotation analysis, evaluating bids, and coordinating supplier follow-up to facilitate timely acquisition of goods and services.",
 
-          "Processed procurement requests for office and warehouse supplies, ensuring inventory readiness",
+          "Tracked purchase orders and coordinated logistics activities including dispatch planning, transport arrangements, and delivery confirmation to ensure uninterrupted programme operations.",
 
-          "Prepared load plans, packing lists, and documentation for accurate and timely deliveries",
+          "Managed inventory tracking, stock movement recording, and reconciliation processes using Excel-based systems, maintaining accurate and up-to-date stock records.",
 
-          "Supervised over 150 shipments with a 98% on-time delivery rate and led cross-functional logistics teams",
+          "Supported payroll administration by managing employee time tracking, leave records, and benefits deductions, reducing discrepancies by 15%.",
 
-          "Organized transportation logistics for shipments across South Sudan, improving delivery efficiency by 15%",
+          "Provided comprehensive administrative support including document control, correspondence management, and office coordination to sustain operational effectiveness.",
 
-          "Coordinated shipments with vendors and logistics teams, verified packing lists, and ensured accurate and timely deliveries",
-
-          "Maintained detailed documentation, issued waybills, and completed paperwork for in-and-out movements of materials",
-
-          "Redesigned warehouse layout, increasing storage efficiency by 25% and streamlining retrieval processes",
-
-          "Coordinated with vendors and logistics teams to resolve shipment delays and discrepancies",
-
-          "Acted as a point of contact for clients and suppliers, maintaining professional relationships",
-
-          "Monitored budgets, generated financial reports, and supported external audits",
-
-          "Monitored budget allocations, tracked expenditures, and prepared reports, supporting financial compliance and accurate record-keeping",
-
-          "Submitted weekly inventory and warehouse stock reports to program managers, contributing to transparent supply chain management",
-
-          "Maintained documentation including purchase orders, invoices, delivery notes, and supplier records"
+          "Developed and maintained Excel dashboards for finance, procurement, and inventory reporting, enabling data-driven management oversight and programme planning."
 
         ]
 
@@ -471,27 +473,28 @@ export default function Portfolio() {
             "@type": "Person",
             "name": "Riak Mawut Angui Atem",
             "alternateName": "Riak Mawut",
-            "jobTitle": "Supply Chain & Administration Officer",
-            "description": "Supply Chain Professional with 5+ years experience. Cybersecurity student at University of Juba. Freelance web developer.",
+            "jobTitle": "Finance & Logistics Professional",
+            "description": "Finance and Logistics professional with 2.5+ years supporting humanitarian health programmes. Expert in financial management, procurement, supply chain coordination. Also a freelance web developer.",
             "url": "https://riak-portfolio.onrender.com",
             "image": "https://riak-portfolio.onrender.com/profile-icon.png",
-            "email": "riakmawut3@gmail.com",
+            "email": "Riakmawut68@gmail.com",
             "telephone": "+211922950783",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Juba",
               "addressCountry": "South Sudan",
-              "streetAddress": "Muniki Suk Malesha"
+              "streetAddress": "Muniki"
             },
             "alumniOf": {
               "@type": "EducationalOrganization",
-              "name": "University of Juba"
+              "name": "Ndejje University"
             },
             "knowsAbout": [
-              "Supply Chain Management",
+              "Finance & Accounting",
               "Procurement",
+              "Supply Chain Management",
               "Logistics",
-              "Cybersecurity",
+              "QuickBooks",
               "Web Development",
               "Next.js",
               "React",
@@ -629,7 +632,7 @@ export default function Portfolio() {
 
                 <span className="text-xs sm:text-sm font-medium text-orange-700">
 
-                  Software Engineer • Supply Chain Professional
+                  Software Engineer • Finance & Logistics Professional
 
                 </span>
 
@@ -697,11 +700,21 @@ export default function Portfolio() {
 
                 </div>
 
-                <div className="flex items-center space-x-2">
+                <div className="flex flex-col space-y-1">
 
-                  <GraduationCap size={14} className="text-orange-600 flex-shrink-0" />
+                  <div className="flex items-center space-x-2">
 
-                  <span>University of Juba</span>
+                    <GraduationCap size={14} className="text-orange-600 flex-shrink-0" />
+
+                    <span>Ndejje University, BBA Accounting</span>
+
+                  </div>
+
+                  <div className="flex items-center space-x-2 ml-6">
+
+                    <span className="text-xs text-gray-600">University of Juba, Bachelor's in Cybersecurity (4th Year)</span>
+
+                  </div>
 
                 </div>
 
