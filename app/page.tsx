@@ -473,8 +473,8 @@ export default function Portfolio() {
             "@type": "Person",
             "name": "Riak Mawut Angui Atem",
             "alternateName": "Riak Mawut",
-            "jobTitle": "Finance & Logistics Professional",
-            "description": "Finance and Logistics professional with 2.5+ years supporting humanitarian health programmes. Expert in financial management, procurement, supply chain coordination. Also a freelance web developer.",
+            "jobTitle": ["Finance & Logistics Professional", "Software Engineer", "Cybersecurity Student"],
+            "description": "Finance and Logistics professional with 2.5+ years supporting humanitarian health programmes in South Sudan. BBA Accounting graduate from Ndejje University. Currently pursuing Bachelor's degree in Cybersecurity at University of Juba (4th year). Expert in financial management, procurement, supply chain coordination, QuickBooks, and web development. Freelance web developer specializing in Next.js, React, and MongoDB.",
             "url": "https://riak-portfolio.onrender.com",
             "image": "https://riak-portfolio.onrender.com/profile-icon.png",
             "email": "Riakmawut68@gmail.com",
@@ -485,20 +485,35 @@ export default function Portfolio() {
               "addressCountry": "South Sudan",
               "streetAddress": "Muniki"
             },
-            "alumniOf": {
-              "@type": "EducationalOrganization",
-              "name": "Ndejje University"
-            },
+            "alumniOf": [
+              {
+                "@type": "EducationalOrganization",
+                "name": "Ndejje University",
+                "location": "Uganda"
+              },
+              {
+                "@type": "EducationalOrganization",
+                "name": "University of Juba",
+                "location": "South Sudan"
+              }
+            ],
             "knowsAbout": [
               "Finance & Accounting",
+              "Business Administration",
               "Procurement",
               "Supply Chain Management",
               "Logistics",
+              "Humanitarian Operations",
               "QuickBooks",
+              "Microsoft Excel",
+              "Financial Management",
               "Web Development",
+              "Cybersecurity",
               "Next.js",
               "React",
-              "MongoDB"
+              "MongoDB",
+              "Node.js",
+              "Secure Coding"
             ],
             "sameAs": [
               "https://www.linkedin.com/in/riak-mawut-9019aa20a",
