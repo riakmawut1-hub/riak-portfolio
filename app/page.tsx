@@ -1452,7 +1452,7 @@ export default function Portfolio() {
 
               <p className="text-gray-400 text-xs sm:text-sm">
 
-                Supply Chain Professional & Cybersecurity Student building secure, responsive web solutions.
+                Finance & Logistics Professional and Cybersecurity Student building secure, responsive web solutions.
 
               </p>
 
@@ -1513,9 +1513,9 @@ export default function Portfolio() {
 
               <div className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-gray-400">
 
-                <p>Cybersecurity Degree (University of Juba)</p>
+                <p>BBA Accounting, Ndejje University</p>
 
-                <p>Business Administration Diploma</p>
+                <p>Bachelor's in Cybersecurity (4th Year), University of Juba</p>
 
                 <p>Driver's License: A, B, C, D1, D, E, T</p>
 
