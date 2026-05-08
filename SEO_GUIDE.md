@@ -134,3 +134,4 @@ If you need help with any of these steps, let me know!
 
 **Remember**: SEO is a long-term process. Be patient and consistent. Your portfolio should start appearing in search results within a few weeks of proper setup.
 
+

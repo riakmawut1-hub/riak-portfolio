@@ -6,45 +6,70 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: baseUrl,
-      lastModified: new Date(),
+      lastModified: new Date('2024-05-08'), // Last updated when CV content was added
       changeFrequency: 'monthly',
       priority: 1,
     },
     {
       url: `${baseUrl}/#about`,
-      lastModified: new Date(),
+      lastModified: new Date('2024-05-08'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/#skills`,
-      lastModified: new Date(),
+      lastModified: new Date('2024-05-08'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/#experience`,
-      lastModified: new Date(),
+      lastModified: new Date('2024-05-08'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/#projects`,
-      lastModified: new Date(),
+      lastModified: new Date('2024-05-08'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/#services`,
-      lastModified: new Date(),
+      lastModified: new Date('2024-05-08'),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/#contact`,
-      lastModified: new Date(),
+      lastModified: new Date('2024-05-08'),
       changeFrequency: 'monthly',
       priority: 0.9,
+    },
+    // Demo pages
+    {
+      url: `${baseUrl}/demos/business-cms.html`,
+      lastModified: new Date('2024-05-08'),
+      changeFrequency: 'yearly',
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/demos/ecommerce-platform.html`,
+      lastModified: new Date('2024-05-08'),
+      changeFrequency: 'yearly',
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/demos/inventory-dashboard.html`,
+      lastModified: new Date('2024-05-08'),
+      changeFrequency: 'yearly',
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/demos/security-hardened.html`,
+      lastModified: new Date('2024-05-08'),
+      changeFrequency: 'yearly',
+      priority: 0.5,
     },
   ];
 }
