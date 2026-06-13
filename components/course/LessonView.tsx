@@ -37,11 +37,11 @@ export default function LessonView({
     lessonProgress.phase3Done && (lessonProgress.quizScore ?? 0) >= 80;
 
   return (
-    <div className="min-h-screen bg-slate-950 flex flex-col">
+    <div className="min-h-screen bg-stone-50 flex flex-col">
       {/* Top nav bar */}
-      <div className="sticky top-0 z-20 bg-slate-900/95 backdrop-blur border-b border-slate-800">
+      <div className="sticky top-0 z-20 bg-white/95 backdrop-blur border-b border-stone-200">
         <div className="max-w-3xl mx-auto px-6 py-3 flex items-center gap-4">
-          <button onClick={onBack} className="text-slate-500 hover:text-slate-300 transition-colors flex-shrink-0 p-1 rounded hover:bg-slate-800">
+          <button onClick={onBack} className="text-slate-600 hover:text-slate-800 transition-colors flex-shrink-0 p-1 rounded hover:bg-stone-100">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
@@ -49,9 +49,9 @@ export default function LessonView({
 
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-xs text-slate-500 font-mono">{mod.icon} Module {mod.number}</span>
-              <span className="text-slate-700">›</span>
-              <span className="text-xs text-white font-medium truncate">{lesson.title}</span>
+              <span className="text-xs text-slate-600 font-mono">{mod.icon} Module {mod.number}</span>
+              <span className="text-slate-400">›</span>
+              <span className="text-xs text-slate-900 font-medium truncate">{lesson.title}</span>
             </div>
           </div>
 
@@ -68,12 +68,12 @@ export default function LessonView({
               return (
                 <div key={label} className="flex items-center gap-1">
                   <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold transition-all
-                    ${isDone ? 'bg-emerald-600 text-white' : isCurrent ? `${PHASE_COLORS[i]} text-white` : 'bg-slate-800 text-slate-600'}`}
+                    ${isDone ? 'bg-emerald-600 text-white' : isCurrent ? `${PHASE_COLORS[i]} text-white` : 'bg-stone-200 text-slate-600'}`}
                     title={label}
                   >
                     {isDone ? '✓' : phaseNum}
                   </div>
-                  {i < 3 && <div className={`w-4 h-px ${isDone ? 'bg-emerald-700' : 'bg-slate-800'}`} />}
+                  {i < 3 && <div className={`w-4 h-px ${isDone ? 'bg-emerald-700' : 'bg-stone-300'}`} />}
                 </div>
               );
             })}

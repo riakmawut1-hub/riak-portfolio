@@ -9,7 +9,7 @@ const PHASES = [
   {
     number: '01',
     label: 'Concept Micro-Lesson',
-    color: 'border-blue-500 bg-blue-950/30',
+    color: 'border-blue-500 bg-blue-50',
     badge: 'bg-blue-600',
     icon: '💡',
     duration: '~60 seconds',
@@ -20,7 +20,7 @@ const PHASES = [
   {
     number: '02',
     label: 'Guided Walkthrough',
-    color: 'border-violet-500 bg-violet-950/30',
+    color: 'border-violet-500 bg-violet-50',
     badge: 'bg-violet-600',
     icon: '🔍',
     duration: '~5 min',
@@ -31,7 +31,7 @@ const PHASES = [
   {
     number: '03',
     label: 'Sandbox: Do It Yourself',
-    color: 'border-emerald-500 bg-emerald-950/30',
+    color: 'border-emerald-500 bg-emerald-50',
     badge: 'bg-emerald-600',
     icon: '⚙️',
     duration: '~10 min',
@@ -42,7 +42,7 @@ const PHASES = [
   {
     number: '04',
     label: 'Mastery Check (MCQ)',
-    color: 'border-amber-500 bg-amber-950/30',
+    color: 'border-amber-500 bg-amber-50',
     badge: 'bg-amber-500',
     icon: '🎯',
     duration: '~5 min',
@@ -56,26 +56,26 @@ const CALLOUT_TYPES = [
   {
     icon: '📌',
     label: 'BEST PRACTICE',
-    color: 'border-blue-500/30 bg-blue-950/20 text-blue-300',
+    color: 'border-blue-500/30 bg-blue-50 text-blue-700',
     desc: 'What professional accountants always do in real practice.',
   },
   {
     icon: '🔍',
     label: 'DEEP DIVE',
-    color: 'border-violet-500/30 bg-violet-950/20 text-violet-300',
+    color: 'border-violet-500/30 bg-violet-50 text-violet-700',
     desc: 'The economic or business reasoning behind the rule.',
   },
   {
     icon: '⚠️',
     label: 'COMMON PITFALL',
-    color: 'border-amber-500/30 bg-amber-950/20 text-amber-300',
+    color: 'border-amber-500/30 bg-amber-50 text-amber-700',
     desc: 'The exact error most learners make — and why.',
   },
 ];
 
 export default function OrientationScreen({ onBegin, onBack }: Props) {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
+    <div className="min-h-screen bg-stone-50 text-slate-900">
       <div className="max-w-4xl mx-auto px-6 py-12">
 
         {/* Back */}

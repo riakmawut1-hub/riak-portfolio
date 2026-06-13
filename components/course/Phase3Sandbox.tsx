@@ -38,8 +38,8 @@ export default function Phase3Sandbox({ lesson, equation, onComplete, onUpdateEq
 
       {/* Context note */}
       {lesson.phase3.contextNote && (
-        <div className="rounded-xl border border-slate-700 bg-slate-800/40 p-4 mb-6">
-          <p className="text-slate-300 text-sm leading-relaxed">{lesson.phase3.contextNote}</p>
+        <div className="rounded-xl border border-stone-200 bg-white p-4 mb-6">
+          <p className="text-slate-700 text-sm leading-relaxed">{lesson.phase3.contextNote}</p>
         </div>
       )}
 

@@ -234,7 +234,7 @@ export default function CourseApp() {
 
   // ── Render ──────────────────────────────────────────────────────────────────
   return (
-    <div className="flex h-screen overflow-hidden bg-slate-950 text-slate-100">
+    <div className="flex h-screen overflow-hidden bg-stone-50 text-slate-900">
       {/* Sidebar */}
       {nav.screen !== 'overview' && nav.screen !== 'orientation' && (
         <ProgressSidebar

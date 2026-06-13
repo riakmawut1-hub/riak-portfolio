@@ -37,25 +37,25 @@ function QuestionCard({
   function optionStyle(opt: MCQOption): string {
     if (!revealed) {
       return selectedId === opt.id
-        ? 'border-blue-500 bg-blue-950/40'
-        : 'border-slate-700 hover:border-slate-500 hover:bg-slate-800/60 cursor-pointer';
+        ? 'border-blue-400 bg-blue-50'
+        : 'border-stone-200 hover:border-stone-300 hover:bg-stone-50 cursor-pointer';
     }
-    if (opt.isCorrect) return 'border-emerald-600 bg-emerald-950/30';
-    if (selectedId === opt.id && !opt.isCorrect) return 'border-red-700 bg-red-950/30';
-    return 'border-slate-800 opacity-60';
+    if (opt.isCorrect) return 'border-emerald-400 bg-emerald-50';
+    if (selectedId === opt.id && !opt.isCorrect) return 'border-red-400 bg-red-50';
+    return 'border-stone-300 opacity-60';
   }
 
   return (
-    <div className="rounded-2xl border border-slate-700 bg-slate-900/60 overflow-hidden">
+    <div className="rounded-2xl border border-stone-200 bg-white overflow-hidden">
       {/* Question header */}
-      <div className="px-6 py-5 border-b border-slate-800">
+      <div className="px-6 py-5 border-b border-stone-200">
         <div className="flex items-center gap-2 mb-3">
-          <span className="text-xs font-mono text-slate-500 uppercase tracking-widest">
+          <span className="text-xs font-mono text-slate-600 uppercase tracking-widest">
             Question {qIndex + 1} of {totalQuestions}
           </span>
-          <span className="text-xs font-mono text-slate-700 bg-slate-800 px-2 py-0.5 rounded-full">{question.conceptTag}</span>
+          <span className="text-xs font-mono text-slate-700 bg-stone-100 px-2 py-0.5 rounded-full">{question.conceptTag}</span>
         </div>
-        <p className="text-white font-medium text-base leading-relaxed">{question.question}</p>
+        <p className="text-slate-900 font-medium text-base leading-relaxed">{question.question}</p>
       </div>
 
       {/* Options */}
@@ -75,7 +75,7 @@ function QuestionCard({
                     : 'border-slate-600 text-slate-500'}`}>
                   {revealed && opt.isCorrect ? '✓' : revealed && selectedId === opt.id ? '✗' : OPTION_LABELS[i]}
                 </span>
-                <p className={`flex-1 text-sm leading-relaxed ${revealed && opt.isCorrect ? 'text-emerald-200 font-medium' : revealed && selectedId === opt.id ? 'text-red-300' : 'text-slate-300'}`}>
+                <p className={`flex-1 text-sm leading-relaxed ${revealed && opt.isCorrect ? 'text-emerald-700 font-medium' : revealed && selectedId === opt.id ? 'text-red-700' : 'text-slate-800'}`}>
                   {opt.text}
                 </p>
               </div>
@@ -85,10 +85,10 @@ function QuestionCard({
             {revealed && (
               <div className={`mt-1 mx-1 rounded-xl px-4 py-3 text-sm border
                 ${opt.isCorrect
-                  ? 'border-emerald-800/40 bg-emerald-950/30 text-emerald-300'
+                  ? 'border-emerald-300 bg-emerald-50 text-emerald-700'
                   : selectedId === opt.id
-                  ? 'border-red-900/40 bg-red-950/20 text-red-400'
-                  : 'border-slate-800/30 bg-slate-900/30 text-slate-600'}`}>
+                  ? 'border-red-300 bg-red-50 text-red-700'
+                  : 'border-stone-300 bg-stone-50 text-slate-600'}`}>
                 <span className={`text-xs font-mono font-bold uppercase tracking-widest mr-2
                   ${opt.isCorrect ? 'text-emerald-500' : selectedId === opt.id ? 'text-red-500' : 'text-slate-700'}`}>
                   {opt.isCorrect ? '✓ Correct' : selectedId === opt.id ? '✗ Incorrect' : 'Note'}

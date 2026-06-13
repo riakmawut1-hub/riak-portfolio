@@ -54,13 +54,13 @@ export default function ProgressSidebar({
     <>
       {/* Collapsed toggle */}
       {!isOpen && (
-        <div className="w-12 flex-shrink-0 bg-slate-900 border-r border-slate-800 flex flex-col items-center pt-4 gap-3">
-          <button onClick={onToggle} className="p-2 text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-slate-800" title="Expand sidebar">
+        <div className="w-12 flex-shrink-0 bg-stone-100 border-r border-stone-300 flex flex-col items-center pt-4 gap-3">
+          <button onClick={onToggle} className="p-2 text-slate-600 hover:text-slate-900 transition-colors rounded-lg hover:bg-stone-200" title="Expand sidebar">
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
           </button>
-          <button onClick={onGoHome} className="p-2 text-slate-500 hover:text-white transition-colors rounded-lg hover:bg-slate-800" title="Course home">
+          <button onClick={onGoHome} className="p-2 text-slate-600 hover:text-slate-900 transition-colors rounded-lg hover:bg-stone-200" title="Course home">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
             </svg>
@@ -82,16 +82,16 @@ export default function ProgressSidebar({
 
       {/* Expanded sidebar */}
       {isOpen && (
-        <div className="w-72 flex-shrink-0 bg-slate-900 border-r border-slate-800 flex flex-col overflow-hidden">
+        <div className="w-72 flex-shrink-0 bg-stone-100 border-r border-stone-300 flex flex-col overflow-hidden">
           {/* Top bar */}
-          <div className="flex items-center justify-between px-4 py-3 border-b border-slate-800">
-            <button onClick={onGoHome} className="text-sm font-semibold text-slate-300 hover:text-white flex items-center gap-2 transition-colors">
+          <div className="flex items-center justify-between px-4 py-3 border-b border-stone-300">
+            <button onClick={onGoHome} className="text-sm font-semibold text-slate-700 hover:text-slate-900 flex items-center gap-2 transition-colors">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
               </svg>
               Course Home
             </button>
-            <button onClick={onToggle} className="p-1.5 text-slate-500 hover:text-white rounded-lg hover:bg-slate-800 transition-colors">
+            <button onClick={onToggle} className="p-1.5 text-slate-600 hover:text-slate-900 rounded-lg hover:bg-stone-200 transition-colors">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
               </svg>
@@ -99,12 +99,12 @@ export default function ProgressSidebar({
           </div>
 
           {/* Overall progress */}
-          <div className="px-4 py-3 border-b border-slate-800">
+          <div className="px-4 py-3 border-b border-stone-300">
             <div className="flex items-center justify-between text-xs mb-1.5">
-              <span className="text-slate-500 font-medium">Overall Progress</span>
-              <span className="font-mono text-slate-300">{totalComplete}/{totalLessons} lessons</span>
+              <span className="text-slate-600 font-medium">Overall Progress</span>
+              <span className="font-mono text-slate-700">{totalComplete}/{totalLessons} lessons</span>
             </div>
-            <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+            <div className="w-full h-1.5 bg-stone-200 rounded-full overflow-hidden">
               <div className="h-full bg-gradient-to-r from-blue-500 to-violet-500 rounded-full transition-all duration-500" style={{ width: `${overallPct}%` }} />
             </div>
           </div>
@@ -123,17 +123,17 @@ export default function ProgressSidebar({
                     onClick={() => !isLocked && onGoToModule(mod.id)}
                     disabled={isLocked}
                     className={`w-full flex items-center gap-3 px-4 py-2.5 text-left transition-colors group
-                      ${isLocked ? 'opacity-40 cursor-not-allowed' : 'hover:bg-slate-800/70'}
-                      ${isCurrentMod ? 'bg-slate-800/50' : ''}`}
+                      ${isLocked ? 'opacity-40 cursor-not-allowed' : 'hover:bg-stone-200'}
+                      ${isCurrentMod ? 'bg-stone-200' : ''}`}
                   >
-                    <div className={`w-2 h-2 rounded-full flex-shrink-0 ${isLocked ? 'bg-slate-700' : MOD_DOT[mod.id]}`} />
+                    <div className={`w-2 h-2 rounded-full flex-shrink-0 ${isLocked ? 'bg-stone-300' : MOD_DOT[mod.id]}`} />
                     <div className="flex-1 min-w-0">
-                      <p className={`text-xs font-semibold truncate ${isCurrentMod ? 'text-white' : 'text-slate-400'}`}>
+                      <p className={`text-xs font-semibold truncate ${isCurrentMod ? 'text-slate-900' : 'text-slate-600'}`}>
                         {mod.number}. {mod.title}
                       </p>
                     </div>
                     {isLocked && (
-                      <svg className="w-3 h-3 text-slate-700 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-3 h-3 text-stone-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clipRule="evenodd" />
                       </svg>
                     )}
@@ -152,10 +152,10 @@ export default function ProgressSidebar({
                             key={lesson.id}
                             onClick={() => onGoToLesson(mod.id, lesson.id)}
                             className={`w-full flex items-center gap-2.5 px-2.5 py-2 rounded-lg text-left mb-0.5 transition-colors
-                              ${isCurrent ? 'bg-slate-700 text-white' : 'hover:bg-slate-800/60 text-slate-500 hover:text-slate-300'}`}
+                              ${isCurrent ? 'bg-stone-200 text-slate-900' : 'hover:bg-stone-200 text-slate-600 hover:text-slate-800'}`}
                           >
                             <div className={`w-4 h-4 rounded-full border flex-shrink-0 flex items-center justify-center text-xs
-                              ${done ? 'bg-emerald-600 border-emerald-600 text-white' : isCurrent ? 'border-slate-500' : 'border-slate-700'}`}>
+                              ${done ? 'bg-emerald-600 border-emerald-600 text-white' : isCurrent ? 'border-slate-400' : 'border-stone-300'}`}>
                               {done ? '✓' : ''}
                             </div>
                             <span className="text-xs truncate">{lesson.title}</span>
@@ -173,23 +173,23 @@ export default function ProgressSidebar({
           </div>
 
           {/* Accounting equation banner */}
-          <div className="border-t border-slate-800 px-4 py-3 bg-slate-950/60">
-            <p className="text-xs text-slate-600 uppercase tracking-widest font-mono mb-2">Live Equation</p>
+          <div className="border-t border-stone-300 px-4 py-3 bg-stone-200/80">
+            <p className="text-xs text-slate-700 uppercase tracking-widest font-mono mb-2">Live Equation</p>
             <div className="grid grid-cols-3 gap-1 text-center">
-              <div className="bg-blue-950/40 border border-blue-900/40 rounded-lg px-1 py-1.5">
-                <p className="text-xs font-mono text-blue-400 font-bold truncate">{fmt(equation.assets)}</p>
+              <div className="bg-blue-50 border border-blue-200 rounded-lg px-1 py-1.5">
+                <p className="text-xs font-mono text-blue-600 font-bold truncate">{fmt(equation.assets)}</p>
                 <p className="text-xs text-slate-600 leading-none mt-0.5">Assets</p>
               </div>
-              <div className="bg-red-950/30 border border-red-900/30 rounded-lg px-1 py-1.5">
-                <p className="text-xs font-mono text-red-400 font-bold truncate">{fmt(equation.liabilities)}</p>
+              <div className="bg-red-50 border border-red-200 rounded-lg px-1 py-1.5">
+                <p className="text-xs font-mono text-red-600 font-bold truncate">{fmt(equation.liabilities)}</p>
                 <p className="text-xs text-slate-600 leading-none mt-0.5">Liabilities</p>
               </div>
-              <div className="bg-emerald-950/30 border border-emerald-900/30 rounded-lg px-1 py-1.5">
-                <p className="text-xs font-mono text-emerald-400 font-bold truncate">{fmt(equation.equity)}</p>
+              <div className="bg-emerald-50 border border-emerald-200 rounded-lg px-1 py-1.5">
+                <p className="text-xs font-mono text-emerald-600 font-bold truncate">{fmt(equation.equity)}</p>
                 <p className="text-xs text-slate-600 leading-none mt-0.5">Equity</p>
               </div>
             </div>
-            <div className={`mt-2 text-center text-xs font-mono ${Math.abs(equation.assets - (equation.liabilities + equation.equity)) < 1 ? 'text-emerald-600' : 'text-red-500'}`}>
+            <div className={`mt-2 text-center text-xs font-mono ${Math.abs(equation.assets - (equation.liabilities + equation.equity)) < 1 ? 'text-emerald-600' : 'text-red-600'}`}>
               {Math.abs(equation.assets - (equation.liabilities + equation.equity)) < 1 ? '✓ In Balance' : '⚠ Out of Balance'}
             </div>
           </div>

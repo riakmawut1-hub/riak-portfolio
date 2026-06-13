@@ -30,12 +30,12 @@ function getModuleComplete(mod: Module, prog: ModuleProgressState): number {
 }
 
 const CALLOUT_COLORS: Record<string, string> = {
-  'module-1': 'border-blue-500 bg-blue-950/40',
-  'module-2': 'border-emerald-500 bg-emerald-950/40',
-  'module-3': 'border-violet-500 bg-violet-950/40',
-  'module-4': 'border-amber-500 bg-amber-950/40',
-  'module-5': 'border-cyan-500 bg-cyan-950/40',
-  'module-6': 'border-rose-500 bg-rose-950/40',
+  'module-1': 'border-blue-500 bg-blue-50',
+  'module-2': 'border-emerald-500 bg-emerald-50',
+  'module-3': 'border-violet-500 bg-violet-50',
+  'module-4': 'border-amber-500 bg-amber-50',
+  'module-5': 'border-cyan-500 bg-cyan-50',
+  'module-6': 'border-rose-500 bg-rose-50',
 };
 const BADGE_COLORS: Record<string, string> = {
   'module-1': 'bg-blue-600',
@@ -51,13 +51,13 @@ export default function CourseOverview({ modules, progress, totalComplete, total
   const hasStarted = totalComplete > 0;
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100">
+    <div className="min-h-screen bg-stone-50 text-slate-900">
       {/* Hero */}
-      <div className="relative overflow-hidden border-b border-slate-800">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-950/60 via-slate-950 to-slate-950 pointer-events-none" />
+      <div className="relative overflow-hidden border-b border-stone-200">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-100/60 via-stone-50 to-stone-50 pointer-events-none" />
         {/* Ledger line decoration */}
         <div className="absolute inset-0 opacity-5 pointer-events-none"
-          style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 39px, #94a3b8 39px, #94a3b8 40px)', backgroundSize: '100% 40px' }} />
+          style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 39px, #cbd5e1 39px, #cbd5e1 40px)', backgroundSize: '100% 40px' }} />
 
         <div className="relative max-w-6xl mx-auto px-6 pt-20 pb-16">
           <div className="max-w-3xl">
@@ -66,15 +66,15 @@ export default function CourseOverview({ modules, progress, totalComplete, total
               Interactive Learning Platform
             </div>
 
-            <h1 className="text-5xl font-bold tracking-tight text-white mb-4 leading-tight">
+            <h1 className="text-5xl font-bold tracking-tight text-slate-900 mb-4 leading-tight">
               Accounting & Finance<br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-violet-400">
                 Zero to Mastery
               </span>
             </h1>
 
-            <p className="text-xl text-slate-400 mb-8 leading-relaxed">
-              You don't read accounting. You <em className="text-slate-200 not-italic font-medium">do</em> it.
+            <p className="text-xl text-slate-700 mb-8 leading-relaxed">
+              You don't read accounting. You <em className="text-slate-900 not-italic font-medium">do</em> it.
               Every concept is learned by journalizing real transactions, building T-accounts,
               and seeing the accounting equation update live — until it becomes instinct.
             </p>
@@ -88,8 +88,8 @@ export default function CourseOverview({ modules, progress, totalComplete, total
                 { label: 'Live Sandbox', value: '✓' },
               ].map((s) => (
                 <div key={s.label} className="flex flex-col">
-                  <span className="text-2xl font-bold font-mono text-white">{s.value}</span>
-                  <span className="text-slate-500 text-xs uppercase tracking-widest">{s.label}</span>
+                  <span className="text-2xl font-bold font-mono text-slate-900">{s.value}</span>
+                  <span className="text-slate-600 text-xs uppercase tracking-widest">{s.label}</span>
                 </div>
               ))}
             </div>
@@ -131,11 +131,11 @@ export default function CourseOverview({ modules, progress, totalComplete, total
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h2 className="text-2xl font-bold text-white">Learning Pathway</h2>
-            <p className="text-slate-500 mt-1 text-sm">Each module builds on the last. Complete in sequence for maximum retention.</p>
+            <h2 className="text-2xl font-bold text-slate-900">Learning Pathway</h2>
+            <p className="text-slate-600 mt-1 text-sm">Each module builds on the last. Complete in sequence for maximum retention.</p>
           </div>
           {hasStarted && (
-            <button onClick={onReset} className="text-xs text-slate-600 hover:text-slate-400 transition-colors underline underline-offset-2">
+            <button onClick={onReset} className="text-xs text-slate-500 hover:text-slate-700 transition-colors underline underline-offset-2">
               Reset progress
             </button>
           )}
@@ -155,7 +155,7 @@ export default function CourseOverview({ modules, progress, totalComplete, total
                 disabled={isLocked}
                 className={`group relative text-left rounded-2xl border p-6 transition-all duration-200
                   ${isLocked
-                    ? 'border-slate-800 bg-slate-900/40 opacity-50 cursor-not-allowed'
+                    ? 'border-stone-300 bg-stone-100 opacity-50 cursor-not-allowed'
                     : `${CALLOUT_COLORS[mod.id]} hover:scale-[1.02] hover:shadow-xl cursor-pointer`
                   }`}
               >
@@ -177,12 +177,12 @@ export default function CourseOverview({ modules, progress, totalComplete, total
                   {mod.icon}
                 </div>
 
-                <h3 className="font-bold text-white text-base mb-1">
+                <h3 className="font-bold text-slate-900 text-base mb-1">
                   Module {mod.number}: {mod.title}
                 </h3>
-                <p className="text-slate-400 text-sm mb-4 leading-relaxed">{mod.subtitle}</p>
+                <p className="text-slate-600 text-sm mb-4 leading-relaxed">{mod.subtitle}</p>
 
-                <div className="flex items-center justify-between text-xs text-slate-500 mb-3">
+                <div className="flex items-center justify-between text-xs text-slate-600 mb-3">
                   <span>{mod.lessons.length} lessons · {mod.estimatedHours}h</span>
                   {!isLocked && pct > 0 && (
                     <span className="font-mono text-slate-300">{pct}%</span>
@@ -190,7 +190,7 @@ export default function CourseOverview({ modules, progress, totalComplete, total
                 </div>
 
                 {!isLocked && (
-                  <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div className="w-full h-1.5 bg-stone-200 rounded-full overflow-hidden">
                     <div
                       className={`h-full rounded-full transition-all duration-500 ${isDone ? 'bg-emerald-500' : `bg-gradient-to-r ${mod.color.replace('from-', 'from-').replace('to-', 'to-')}`}`}
                       style={{ width: `${pct}%` }}
@@ -210,8 +210,8 @@ export default function CourseOverview({ modules, progress, totalComplete, total
         </div>
 
         {/* How it works strip */}
-        <div className="mt-16 border border-slate-800 rounded-2xl p-8 bg-slate-900/40">
-          <h2 className="text-lg font-bold text-white mb-6">How Every Lesson Works</h2>
+        <div className="mt-16 border border-stone-200 rounded-2xl p-8 bg-white">
+          <h2 className="text-lg font-bold text-slate-900 mb-6">How Every Lesson Works</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { n: '01', label: 'Micro-Lesson', desc: 'One concept, one analogy, 60 seconds', color: 'text-blue-400' },
@@ -221,8 +221,8 @@ export default function CourseOverview({ modules, progress, totalComplete, total
             ].map((step) => (
               <div key={step.n} className="flex flex-col gap-2">
                 <span className={`font-mono text-2xl font-bold ${step.color}`}>{step.n}</span>
-                <span className="font-semibold text-white text-sm">{step.label}</span>
-                <span className="text-slate-500 text-xs leading-relaxed">{step.desc}</span>
+                <span className="font-semibold text-slate-900 text-sm">{step.label}</span>
+                <span className="text-slate-600 text-xs leading-relaxed">{step.desc}</span>
               </div>
             ))}
           </div>

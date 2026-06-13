@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function CourseLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-slate-950 font-sans antialiased">
+    <div className="min-h-screen bg-stone-50 font-sans antialiased">
       {children}
     </div>
   );

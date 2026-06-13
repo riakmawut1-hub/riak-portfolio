@@ -69,7 +69,7 @@ export default function Phase2Walkthrough({ lesson, onComplete }: Props) {
       {/* Transaction description */}
       <div className="rounded-xl border border-violet-700/40 bg-violet-950/30 p-5 mb-8">
         <p className="text-xs font-mono text-violet-400 uppercase tracking-widest mb-2">Transaction</p>
-        <p className="text-slate-200 text-base leading-relaxed">{phase2.transactionDescription}</p>
+        <p className="text-slate-800 text-base leading-relaxed">{phase2.transactionDescription}</p>
       </div>
 
       {/* Steps */}
@@ -84,18 +84,18 @@ export default function Phase2Walkthrough({ lesson, onComplete }: Props) {
 
           return (
             <div key={step.id} className={`rounded-xl border transition-all duration-300
-              ${isDone ? 'border-emerald-700/50 bg-emerald-950/20'
-                : isCurrent ? 'border-violet-700/50 bg-violet-950/20'
-                : isLocked ? 'border-slate-800 bg-slate-900/20 opacity-40'
-                : 'border-slate-700 bg-slate-900/20'}`}>
+              ${isDone ? 'border-emerald-300 bg-emerald-50'
+                : isCurrent ? 'border-violet-300 bg-violet-50'
+                : isLocked ? 'border-stone-300 bg-stone-100 opacity-40'
+                : 'border-stone-200 bg-white'}`}>
 
               {/* Step header */}
-              <div className="flex items-center gap-3 px-5 py-3 border-b border-slate-800/50">
+              <div className="flex items-center gap-3 px-5 py-3 border-b border-stone-200">
                 <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0
-                  ${isDone ? 'bg-emerald-600 text-white' : isCurrent ? 'bg-violet-600 text-white' : 'bg-slate-800 text-slate-600'}`}>
+                  ${isDone ? 'bg-emerald-600 text-white' : isCurrent ? 'bg-violet-600 text-white' : 'bg-stone-200 text-slate-600'}`}>
                   {isDone ? '✓' : i + 1}
                 </div>
-                <p className={`text-sm font-medium ${isDone ? 'text-emerald-300' : isCurrent ? 'text-white' : 'text-slate-500'}`}>
+                <p className={`text-sm font-medium ${isDone ? 'text-emerald-700' : isCurrent ? 'text-slate-900' : 'text-slate-600'}`}>
                   {step.prompt}
                 </p>
               </div>
@@ -114,10 +114,10 @@ export default function Phase2Walkthrough({ lesson, onComplete }: Props) {
                         onClick={() => handleChoice(i, choice.id)}
                         disabled={isDone || isLocked}
                         className={`w-full text-left rounded-lg border px-4 py-3 text-sm transition-all
-                          ${showCorrect ? 'border-emerald-600 bg-emerald-950/50 text-emerald-300'
-                            : showWrong ? 'border-red-700 bg-red-950/40 text-red-400 animate-pulse'
-                            : isDone ? 'border-slate-800 text-slate-600'
-                            : 'border-slate-700 hover:border-violet-600 hover:bg-violet-950/20 text-slate-300 cursor-pointer'}`}
+                          ${showCorrect ? 'border-emerald-400 bg-emerald-50 text-emerald-700'
+                            : showWrong ? 'border-red-400 bg-red-50 text-red-700 animate-pulse'
+                            : isDone ? 'border-stone-300 text-slate-600'
+                            : 'border-stone-200 hover:border-violet-400 hover:bg-violet-50 text-slate-800 cursor-pointer'}`}
                       >
                         <span className={`font-semibold mr-2 ${showCorrect ? 'text-emerald-400' : showWrong ? 'text-red-500' : 'text-slate-500'}`}>
                           {choice.isCorrect && isDone ? '✓' : ''}
@@ -140,7 +140,7 @@ export default function Phase2Walkthrough({ lesson, onComplete }: Props) {
 
                   {/* Reveal text after correct */}
                   {isDone && (
-                    <div className="rounded-lg bg-slate-800/60 border border-slate-700 px-4 py-3 text-sm text-slate-300 font-mono mt-3">
+                    <div className="rounded-lg bg-stone-100 border border-stone-200 px-4 py-3 text-sm text-slate-800 font-mono mt-3">
                       {step.revealText}
                     </div>
                   )}
@@ -153,20 +153,20 @@ export default function Phase2Walkthrough({ lesson, onComplete }: Props) {
 
       {/* Summary + CTA */}
       {allDone && (
-        <div className="rounded-xl border border-emerald-700/50 bg-emerald-950/20 p-5 mb-6">
-          <p className="text-xs font-mono text-emerald-400 uppercase tracking-widest mb-2">Walkthrough Complete</p>
-          <p className="text-slate-300 text-sm leading-relaxed">{phase2.summaryText}</p>
+        <div className="rounded-xl border border-emerald-300 bg-emerald-50 p-5 mb-6">
+          <p className="text-xs font-mono text-emerald-700 uppercase tracking-widest mb-2">Walkthrough Complete</p>
+          <p className="text-slate-700 text-sm leading-relaxed">{phase2.summaryText}</p>
         </div>
       )}
 
-      <div className="flex justify-end pt-4 border-t border-slate-800">
+      <div className="flex justify-end pt-4 border-t border-stone-200">
         <button
           onClick={onComplete}
           disabled={!allDone}
           className={`px-6 py-3 font-semibold rounded-xl transition-all text-sm
             ${allDone
               ? 'bg-violet-600 hover:bg-violet-500 text-white shadow-lg shadow-violet-900/30 hover:-translate-y-0.5'
-              : 'bg-slate-800 text-slate-600 cursor-not-allowed'}`}
+              : 'bg-stone-200 text-slate-600 cursor-not-allowed'}`}
         >
           {allDone ? 'Go to Sandbox →' : `Complete all ${phase2.steps.length} steps to continue`}
         </button>
