@@ -48,15 +48,27 @@ export default function Portfolio() {
     },
 
     about: {
+      heading: "Software Developer and Cybersecurity Professional based in South Sudan.",
+      intro: "Riak Mawut Angui Atem provides professional software development, full-stack web engineering (React, Node.js), and cybersecurity expertise for organizations and clients in South Sudan and worldwide.",
       paragraphs: [
+        "Currently in my 4th year pursuing a Bachelor's degree in Cybersecurity at the University of Juba, where I have developed practical coding skills and expertise in secure systems design. Through my studies and independent practice, I design and build fully responsive websites and web applications using modern frameworks like Next.js, React, and MongoDB. My web development work emphasizes accessibility, mobile-first design, secure defaults, clean architecture, and cost-effective deployment strategies.",
         "My name is Riak Mawut Angui Atem. I hold a Bachelor of Business Administration (BBA) in Accounting from Ndejje University, Uganda. I am a results-driven Finance and Logistics professional with over two and a half years of progressive experience supporting humanitarian health programmes in South Sudan. I demonstrate proven expertise in end-to-end financial management, procurement cycle administration, supply chain coordination, and inventory control within donor-funded and NGO operational environments.",
         "Throughout my career, I have developed exceptional proficiency in upholding strict accountability standards, donor compliance frameworks, and audit-ready documentation practices. I am skilled in deploying QuickBooks, ERPs, and advanced Excel-based systems to drive operational efficiency and transparent reporting. My experience spans financial documentation, accounts payable/receivable processing, invoice verification, bank reconciliation, and comprehensive expenditure tracking.",
-        "Currently in my 4th year pursuing a Bachelor's degree in Cybersecurity at the University of Juba, where I have developed practical coding skills and expertise in secure systems design. Through my studies and independent practice, I design and build fully responsive websites and web applications using modern frameworks like Next.js, React, and MongoDB. My web development work emphasizes accessibility, mobile-first design, secure defaults, clean architecture, and cost-effective deployment strategies.",
         "I am recognized for meticulous attention to detail, sound judgment under pressure, and the ability to collaborate effectively within multidisciplinary humanitarian teams. Professionally, I am detail-oriented, analytical, accountability-driven, and committed to leveraging financial acumen, logistics expertise, and technical skills to strengthen programme delivery. I offer affordable freelance services for web development and technical solutions for small businesses and personal projects."
       ]
     },
 
     skills: [
+
+      "Web Development (Next.js, Tailwind, React)",
+
+      "Backend Development (Node.js, Express, MongoDB)",
+
+      "Database Management & API Development",
+
+      "Security Fundamentals & Secure Coding Practices",
+
+      "Responsive Design & Mobile-First Approach",
 
       "Financial Management & Accounting",
 
@@ -74,17 +86,7 @@ export default function Portfolio() {
 
       "Advanced Microsoft Excel (Dashboards, Tracking Systems, Data Analysis)",
 
-      "Financial Reporting & Donor Compliance",
-
-      "Web Development (Next.js, Tailwind, React)",
-
-      "Backend Development (Node.js, Express, MongoDB)",
-
-      "Database Management & API Development",
-
-      "Responsive Design & Mobile-First Approach",
-
-      "Security Fundamentals & Secure Coding Practices"
+      "Financial Reporting & Donor Compliance"
 
     ],
 
@@ -473,8 +475,8 @@ export default function Portfolio() {
             "@type": "Person",
             "name": "Riak Mawut Angui Atem",
             "alternateName": "Riak Mawut",
-            "jobTitle": ["Finance & Logistics Professional", "Software Engineer", "Cybersecurity Student"],
-            "description": "Finance and Logistics professional with 2.5+ years supporting humanitarian health programmes in South Sudan. BBA Accounting graduate from Ndejje University. Currently pursuing Bachelor's degree in Cybersecurity at University of Juba (4th year). Expert in financial management, procurement, supply chain coordination, QuickBooks, and web development. Freelance web developer specializing in Next.js, React, and MongoDB.",
+            "jobTitle": ["Software Developer", "Cybersecurity Professional"],
+            "description": "Riak Mawut Angui Atem is a professional software developer, web engineer, and cybersecurity specialist based in Juba, South Sudan, building modern web applications with React, Next.js, and secure coding practices. Also experienced in finance, logistics, and supply chain operations within humanitarian programmes.",
             "url": "https://riak-portfolio.onrender.com",
             "image": "https://riak-portfolio.onrender.com/profile-icon.png",
             "email": "Riakmawut68@gmail.com",
@@ -807,11 +809,19 @@ export default function Portfolio() {
 
         <div className="max-w-6xl mx-auto">
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-8 sm:mb-12" style={{ fontFamily: 'Roboto, sans-serif' }}>About</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4" style={{ fontFamily: 'Roboto, sans-serif' }}>About</h2>
+
+          <p className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 mb-4 sm:mb-6" style={{ fontFamily: 'Roboto, sans-serif' }}>
+            {content.about.heading}
+          </p>
 
           <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-start">
 
             <div className="space-y-4 sm:space-y-6 order-2 md:order-1">
+
+              <p className="text-gray-700 leading-relaxed text-justify text-sm sm:text-base md:text-lg font-medium" style={{ fontFamily: 'Roboto, sans-serif' }}>
+                {content.about.intro}
+              </p>
 
               {content.about.paragraphs.map((paragraph, index) => (
 
@@ -857,7 +867,7 @@ export default function Portfolio() {
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2 sm:mb-4">Core Competencies</h2>
 
-          <p className="text-sm sm:text-base text-gray-600 mb-8 sm:mb-12">Supply Chain Expertise + Technical Skills</p>
+          <p className="text-sm sm:text-base text-gray-600 mb-8 sm:mb-12">Technical Skills + Supply Chain & Finance Expertise</p>
 
           
 

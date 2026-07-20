@@ -2,9 +2,9 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Riak Mawut Angui Atem | Supply Chain Professional & Web Developer",
-  description: "Riak Mawut Angui Atem - Supply Chain & Administration Officer with 5+ years experience. Cybersecurity student at University of Juba. Freelance web developer specializing in Next.js, React, and MongoDB. Based in Juba, South Sudan.",
-  keywords: "Riak Mawut Angui Atem, Riak Mawut, Supply Chain Professional, Cybersecurity Student, Web Developer, South Sudan, Juba, Next.js, React, MongoDB, Freelance Developer, Supply Chain Officer, Administration Officer",
+  title: "Riak Mawut Angui Atem | Software Developer & Cybersecurity Professional in South Sudan",
+  description: "Riak Mawut Angui Atem is a professional software developer, web engineer, and cybersecurity specialist based in Juba, South Sudan, building modern web applications with React, Next.js, and secure coding practices.",
+  keywords: "Riak Mawut Angui Atem, Software Developer South Sudan, Cybersecurity Professional South Sudan, Web Developer Juba, React Developer South Sudan, Next.js Developer, Full-Stack Engineer South Sudan, Riak Mawut, Supply Chain Professional, Finance Professional, Juba",
   authors: [{ name: "Riak Mawut Angui Atem" }],
   creator: "Riak Mawut Angui Atem",
   publisher: "Riak Mawut Angui Atem",
@@ -13,8 +13,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "Riak Mawut Angui Atem - Portfolio",
-    description: "Supply Chain & Administration Professional | Cybersecurity Student | Web Developer",
+    title: "Riak Mawut Angui Atem | Software Developer & Cybersecurity Professional in South Sudan",
+    description: "Professional software developer, web engineer, and cybersecurity specialist based in Juba, South Sudan. React, Next.js, and secure coding practices.",
     url: 'https://riak-portfolio.onrender.com',
     siteName: 'Riak Mawut Portfolio',
     type: "website",
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Riak Mawut Angui Atem - Portfolio",
-    description: "Supply Chain Professional & Cybersecurity Student | Web Developer",
+    title: "Riak Mawut Angui Atem | Software Developer & Cybersecurity Professional in South Sudan",
+    description: "Professional software developer, web engineer, and cybersecurity specialist based in Juba, South Sudan.",
   },
   icons: {
     icon: "/profile-icon.png",
